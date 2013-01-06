@@ -10,18 +10,15 @@
 
 @interface HWAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 {
-    IBOutlet NSTextField *textField;
-    IBOutlet NSTextField *textLabel;
+    IBOutlet NSTextField *reminderTextField;
+    IBOutlet NSTextField *statusLabel;
+    IBOutlet NSButton *startStopButton;
 }
 
 @property (weak) NSTimer *repeatingTimer;
 
 - (NSDictionary *)userInfo;
 
-- (IBAction)startReminder:(id)sender;
-
-- (void)showReminder:(NSTimer*)theTimer;
-
-- (IBAction)showNotification:(id)sender;
+- (IBAction)startStopReminder:(id)sender;
 
 @end
