@@ -8,8 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface HWAppDelegate : NSObject <NSApplicationDelegate>
+@interface HWAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
+{
+    IBOutlet NSTextField *textField;
+    IBOutlet NSTextField *textLabel;
+}
 
-@property (assign) IBOutlet NSWindow *window;
+- (IBAction)showtext:(id)sender;
+
+- (IBAction)showNotification:(id)sender;
 
 @end
