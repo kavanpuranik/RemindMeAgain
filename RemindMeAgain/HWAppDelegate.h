@@ -14,7 +14,13 @@
     IBOutlet NSTextField *textLabel;
 }
 
-- (IBAction)showtext:(id)sender;
+@property (weak) NSTimer *repeatingTimer;
+
+- (NSDictionary *)userInfo;
+
+- (IBAction)startReminder:(id)sender;
+
+- (void)showReminder:(NSTimer*)theTimer;
 
 - (IBAction)showNotification:(id)sender;
 
