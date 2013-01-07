@@ -10,15 +10,21 @@
 
 @interface HWAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 {
+    
     IBOutlet NSTextField *reminderTextField;
+    IBOutlet NSDatePicker *periodPicker;
+    IBOutlet NSDatePickerCell *periodPickerCell;
     IBOutlet NSTextField *statusLabel;
     IBOutlet NSButton *startStopButton;
+
 }
+
+@property (assign) IBOutlet NSWindow *window;
 
 @property (weak) NSTimer *repeatingTimer;
 
-- (NSDictionary *)userInfo;
-
 - (IBAction)startStopReminder:(id)sender;
+
+- (NSDictionary *)userInfo;
 
 @end

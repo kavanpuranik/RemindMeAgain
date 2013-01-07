@@ -14,6 +14,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
+    [self initDatePicker];
+    NSLog(@"application started");
 }
 
 - (IBAction)startStopReminder:(id)sender {
@@ -71,6 +73,14 @@
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
      shouldPresentNotification:(NSUserNotification *)notification{
     return YES;
+}
+
+- (void)initDatePicker
+{
+      NSLocale*  my24HourLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
+     [periodPickerCell setLocale:my24HourLocale];
+     [periodPickerCell setFormatter:[[NSDateFormatter alloc] initWithDateFormat:@"%H:%M" allowNaturalLanguage:NO] ];
+     [periodPickerCell setTitle:@"00:30"];
 }
 
 @end
