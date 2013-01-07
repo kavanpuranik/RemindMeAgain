@@ -13,9 +13,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     [self initDatePicker];
-    
     [self initFormFields];
-
     NSLog(@"application started");
 }
 
