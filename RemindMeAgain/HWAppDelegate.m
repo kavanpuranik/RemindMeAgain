@@ -14,6 +14,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
+    [reminderTextField setStringValue:@"Get up. Take a Deep Breath. Stretch your legs."];
+    
     [self initDatePicker];
     NSLog(@"application started");
 }
@@ -33,10 +35,20 @@
 
 - (void) startReminderTimer {
     
-    // Cancel a preexisting timer.
+    // Cancel any preexisting timer
     [self.repeatingTimer invalidate];
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5
+    NSDate *periodDate = [periodPicker dateValue];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:periodDate];
+    NSInteger hours = [components hour];
+    NSInteger minutes = [components minute];
+    NSInteger intervalInSeconds = hours * 60 * 60 + minutes * 60;
+    
+    NSLog(@"hours %ld minutes %ld", hours, minutes);
+    NSLog(@"Interval set to %ld seconds", intervalInSeconds);
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval: intervalInSeconds
                                                       target:self selector:@selector(startReminder:)
                                                     userInfo:[self userInfo] repeats:YES];
     
