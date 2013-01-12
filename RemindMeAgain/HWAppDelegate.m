@@ -80,6 +80,9 @@
     notification.title = @"Remind Me";
     notification.informativeText = reminderText;
     notification.soundName = NSUserNotificationDefaultSoundName;
+    notification.hasActionButton = FALSE;
+//    notification.actionButtonTitle = @"Open";
+    [notification setOtherButtonTitle: @"Close"];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }

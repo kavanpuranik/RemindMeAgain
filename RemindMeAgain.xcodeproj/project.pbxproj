@@ -447,6 +447,7 @@
 				52DB6D1716990BD400585DF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52DB6D1816990BD400585DF5 /* Build configuration list for PBXNativeTarget "RemindMeAgainTests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +456,7 @@
 				52DB6D1A16990BD400585DF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
