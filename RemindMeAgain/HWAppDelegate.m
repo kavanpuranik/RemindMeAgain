@@ -40,10 +40,8 @@ void *kContextActivePanel = &kContextActivePanel;
 {
     // Install icon into the menu bar
     self.menubarController = [[MenubarController alloc] init];
-    
-//    [self initDatePicker];
-//    [self initFormFields];
-//    NSLog(@"application started");
+
+    NSLog(@"application started");
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		5223B6C116A259D70095BA91 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6BF16A259D70095BA91 /* Status.png */; };
 		5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6C016A259D70095BA91 /* StatusHighlighted.png */; };
-		522ECB8D16A2384800277E29 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522ECB7C16A2296200277E29 /* PanelController.m */; };
-		522ECB8E16A2384E00277E29 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522ECB7A16A2296200277E29 /* MenubarController.m */; };
-		522ECB8F16A2386400277E29 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522ECB8416A22EDB00277E29 /* StatusItemView.m */; };
-		522ECB9016A2386800277E29 /* Panel.m in Sources */ = {isa = PBXBuildFile; fileRef = 522ECB8216A22EDB00277E29 /* Panel.m */; };
-		522ECB9116A2386C00277E29 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 522ECB8616A22EDB00277E29 /* BackgroundView.m */; };
 		522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522ECB9216A2428800277E29 /* StatusBarPopup.xib */; };
+		529D0FA816A2838300AD8301 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0F9E16A2838300AD8301 /* PanelController.m */; };
+		529D0FA916A2838300AD8301 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA016A2838300AD8301 /* BackgroundView.m */; };
+		529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA216A2838300AD8301 /* MenubarController.m */; };
+		529D0FAB16A2838300AD8301 /* Panel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA416A2838300AD8301 /* Panel.m */; };
+		529D0FAC16A2838300AD8301 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA716A2838300AD8301 /* StatusItemView.m */; };
 		52DB6CE816990BD300585DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
 		52DB6CF216990BD300585DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CF016990BD300585DF5 /* InfoPlist.strings */; };
 		52DB6CF416990BD300585DF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6CF316990BD300585DF5 /* main.m */; };
@@ -40,17 +40,17 @@
 /* Begin PBXFileReference section */
 		5223B6BF16A259D70095BA91 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
 		5223B6C016A259D70095BA91 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
-		522ECB7916A2296200277E29 /* MenubarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenubarController.h; path = ../../Popup/Popup/MenubarController.h; sourceTree = "<group>"; };
-		522ECB7A16A2296200277E29 /* MenubarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenubarController.m; path = ../../Popup/Popup/MenubarController.m; sourceTree = "<group>"; };
-		522ECB7B16A2296200277E29 /* PanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PanelController.h; path = ../../Popup/Popup/PanelController.h; sourceTree = "<group>"; };
-		522ECB7C16A2296200277E29 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PanelController.m; path = ../../Popup/Popup/PanelController.m; sourceTree = "<group>"; };
-		522ECB8116A22EDB00277E29 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Panel.h; path = ../../Popup/Popup/Panel.h; sourceTree = "<group>"; };
-		522ECB8216A22EDB00277E29 /* Panel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Panel.m; path = ../../Popup/Popup/Panel.m; sourceTree = "<group>"; };
-		522ECB8316A22EDB00277E29 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusItemView.h; path = ../../Popup/Popup/StatusItemView.h; sourceTree = "<group>"; };
-		522ECB8416A22EDB00277E29 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusItemView.m; path = ../../Popup/Popup/StatusItemView.m; sourceTree = "<group>"; };
-		522ECB8516A22EDB00277E29 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackgroundView.h; path = ../../Popup/Popup/BackgroundView.h; sourceTree = "<group>"; };
-		522ECB8616A22EDB00277E29 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackgroundView.m; path = ../../Popup/Popup/BackgroundView.m; sourceTree = "<group>"; };
 		522ECB9216A2428800277E29 /* StatusBarPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarPopup.xib; sourceTree = "<group>"; };
+		529D0F9E16A2838300AD8301 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
+		529D0F9F16A2838300AD8301 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		529D0FA016A2838300AD8301 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
+		529D0FA116A2838300AD8301 /* MenubarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenubarController.h; sourceTree = "<group>"; };
+		529D0FA216A2838300AD8301 /* MenubarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenubarController.m; sourceTree = "<group>"; };
+		529D0FA316A2838300AD8301 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
+		529D0FA416A2838300AD8301 /* Panel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Panel.m; sourceTree = "<group>"; };
+		529D0FA516A2838300AD8301 /* PanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelController.h; sourceTree = "<group>"; };
+		529D0FA616A2838300AD8301 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
+		529D0FA716A2838300AD8301 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		52DB6CE316990BD300585DF5 /* RemindMeAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMeAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DB6CE716990BD300585DF5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		52DB6CEA16990BD300585DF5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -153,16 +153,16 @@
 		52DB6CED16990BD300585DF5 /* RemindMeAgain */ = {
 			isa = PBXGroup;
 			children = (
-				522ECB8116A22EDB00277E29 /* Panel.h */,
-				522ECB8216A22EDB00277E29 /* Panel.m */,
-				522ECB8316A22EDB00277E29 /* StatusItemView.h */,
-				522ECB8416A22EDB00277E29 /* StatusItemView.m */,
-				522ECB8516A22EDB00277E29 /* BackgroundView.h */,
-				522ECB8616A22EDB00277E29 /* BackgroundView.m */,
-				522ECB7916A2296200277E29 /* MenubarController.h */,
-				522ECB7A16A2296200277E29 /* MenubarController.m */,
-				522ECB7B16A2296200277E29 /* PanelController.h */,
-				522ECB7C16A2296200277E29 /* PanelController.m */,
+				529D0F9E16A2838300AD8301 /* PanelController.m */,
+				529D0F9F16A2838300AD8301 /* BackgroundView.h */,
+				529D0FA016A2838300AD8301 /* BackgroundView.m */,
+				529D0FA116A2838300AD8301 /* MenubarController.h */,
+				529D0FA216A2838300AD8301 /* MenubarController.m */,
+				529D0FA316A2838300AD8301 /* Panel.h */,
+				529D0FA416A2838300AD8301 /* Panel.m */,
+				529D0FA516A2838300AD8301 /* PanelController.h */,
+				529D0FA616A2838300AD8301 /* StatusItemView.h */,
+				529D0FA716A2838300AD8301 /* StatusItemView.m */,
 				52DB6CF916990BD300585DF5 /* HWAppDelegate.h */,
 				52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */,
 				52DB6CFC16990BD400585DF5 /* MainMenu.xib */,
@@ -317,11 +317,11 @@
 			files = (
 				52DB6CF416990BD300585DF5 /* main.m in Sources */,
 				52DB6CFB16990BD300585DF5 /* HWAppDelegate.m in Sources */,
-				522ECB8D16A2384800277E29 /* PanelController.m in Sources */,
-				522ECB8E16A2384E00277E29 /* MenubarController.m in Sources */,
-				522ECB8F16A2386400277E29 /* StatusItemView.m in Sources */,
-				522ECB9016A2386800277E29 /* Panel.m in Sources */,
-				522ECB9116A2386C00277E29 /* BackgroundView.m in Sources */,
+				529D0FA816A2838300AD8301 /* PanelController.m in Sources */,
+				529D0FA916A2838300AD8301 /* BackgroundView.m in Sources */,
+				529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */,
+				529D0FAB16A2838300AD8301 /* Panel.m in Sources */,
+				529D0FAC16A2838300AD8301 /* StatusItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
