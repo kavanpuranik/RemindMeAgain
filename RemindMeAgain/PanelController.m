@@ -52,6 +52,7 @@
     [[self window] setFrame:panelRect display:NO];
     
     [startStopButton setAction:@selector(startStopReminder)];
+    [quitButton setAction:@selector(quitApplication)];
 }
 
 #pragma mark - Public accessors
@@ -313,6 +314,10 @@
     NSDate* result = [calendar dateFromComponents:dateComponents];
     
     [periodPicker setDateValue:result];
+}
+
+- (void) quitApplication {
+    [NSApp terminate:self];
 }
 
 @end
