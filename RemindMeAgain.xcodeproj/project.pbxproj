@@ -20,11 +20,11 @@
 		52DB6CF416990BD300585DF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6CF316990BD300585DF5 /* main.m */; };
 		52DB6CF816990BD300585DF5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CF616990BD300585DF5 /* Credits.rtf */; };
 		52DB6CFB16990BD300585DF5 /* HWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */; };
-		52DB6CFE16990BD400585DF5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CFC16990BD400585DF5 /* MainMenu.xib */; };
 		52DB6D0616990BD400585DF5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6D0516990BD400585DF5 /* SenTestingKit.framework */; };
 		52DB6D0716990BD400585DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
 		52DB6D0F16990BD400585DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6D0D16990BD400585DF5 /* InfoPlist.strings */; };
 		52DB6D1216990BD400585DF5 /* RemindMeAgainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6D1116990BD400585DF5 /* RemindMeAgainTests.m */; };
+		52FCCE0216A35C4100427E6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CFC16990BD400585DF5 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,10 +302,10 @@
 			files = (
 				52DB6CF216990BD300585DF5 /* InfoPlist.strings in Resources */,
 				52DB6CF816990BD300585DF5 /* Credits.rtf in Resources */,
-				52DB6CFE16990BD400585DF5 /* MainMenu.xib in Resources */,
 				522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */,
 				5223B6C116A259D70095BA91 /* Status.png in Resources */,
 				5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */,
+				52FCCE0216A35C4100427E6C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
