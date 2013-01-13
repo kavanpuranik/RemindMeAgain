@@ -7,8 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MenubarController.h"
+#import "PanelController.h"
 
-@interface HWAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
+@interface HWAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, PanelControllerDelegate>
 {
     
     IBOutlet NSTextField *reminderTextField;
@@ -26,5 +28,11 @@
 - (IBAction)startStopReminder:(id)sender;
 
 - (NSDictionary *)userInfo;
+
+
+@property (nonatomic, strong) MenubarController *menubarController;
+@property (nonatomic, strong, readonly) PanelController *panelController;
+
+- (IBAction)togglePanel:(id)sender;
 
 @end
