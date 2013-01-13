@@ -96,6 +96,7 @@
 		5223B6BC16A259B00095BA91 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				52FCCE0116A356F100427E6C /* XIB */,
 				5223B6BE16A259C20095BA91 /* Graphics */,
 			);
 			name = "User Interface";
@@ -153,20 +154,8 @@
 		52DB6CED16990BD300585DF5 /* RemindMeAgain */ = {
 			isa = PBXGroup;
 			children = (
-				529D0F9F16A2838300AD8301 /* BackgroundView.h */,
-				529D0FA016A2838300AD8301 /* BackgroundView.m */,
-				529D0FA116A2838300AD8301 /* MenubarController.h */,
-				529D0FA216A2838300AD8301 /* MenubarController.m */,
-				529D0FA316A2838300AD8301 /* Panel.h */,
-				529D0FA416A2838300AD8301 /* Panel.m */,
-				529D0FA516A2838300AD8301 /* PanelController.h */,
-				529D0F9E16A2838300AD8301 /* PanelController.m */,
-				529D0FA616A2838300AD8301 /* StatusItemView.h */,
-				529D0FA716A2838300AD8301 /* StatusItemView.m */,
-				52DB6CF916990BD300585DF5 /* HWAppDelegate.h */,
-				52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */,
-				52DB6CFC16990BD400585DF5 /* MainMenu.xib */,
-				522ECB9216A2428800277E29 /* StatusBarPopup.xib */,
+				52FCCDF616A3564F00427E6C /* Views */,
+				52FCCDF816A3568A00427E6C /* Controllers */,
 				52DB6CEE16990BD300585DF5 /* Supporting Files */,
 			);
 			path = RemindMeAgain;
@@ -201,6 +190,42 @@
 				52DB6D0D16990BD400585DF5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52FCCDF616A3564F00427E6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				529D0FA316A2838300AD8301 /* Panel.h */,
+				529D0FA416A2838300AD8301 /* Panel.m */,
+				529D0FA616A2838300AD8301 /* StatusItemView.h */,
+				529D0FA716A2838300AD8301 /* StatusItemView.m */,
+				529D0F9F16A2838300AD8301 /* BackgroundView.h */,
+				529D0FA016A2838300AD8301 /* BackgroundView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		52FCCDF816A3568A00427E6C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				52DB6CF916990BD300585DF5 /* HWAppDelegate.h */,
+				52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */,
+				529D0FA116A2838300AD8301 /* MenubarController.h */,
+				529D0FA216A2838300AD8301 /* MenubarController.m */,
+				529D0FA516A2838300AD8301 /* PanelController.h */,
+				529D0F9E16A2838300AD8301 /* PanelController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		52FCCE0116A356F100427E6C /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				52DB6CFC16990BD400585DF5 /* MainMenu.xib */,
+				522ECB9216A2428800277E29 /* StatusBarPopup.xib */,
+			);
+			name = XIB;
+			path = RemindMeAgain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
