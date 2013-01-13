@@ -10,7 +10,7 @@
 #import "MenubarController.h"
 #import "PanelController.h"
 
-@interface HWAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, PanelControllerDelegate>
+@interface HWAppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
 {
     
     IBOutlet NSTextField *reminderTextField;
@@ -20,14 +20,6 @@
     IBOutlet NSButton *startStopButton;
 
 }
-
-@property (assign) IBOutlet NSWindow *window;
-
-@property (weak) NSTimer *repeatingTimer;
-
-- (IBAction)startStopReminder:(id)sender;
-
-- (NSDictionary *)userInfo;
 
 
 @property (nonatomic, strong) MenubarController *menubarController;

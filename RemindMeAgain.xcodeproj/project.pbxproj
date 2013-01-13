@@ -110,13 +110,6 @@
 			name = Graphics;
 			sourceTree = "<group>";
 		};
-		522ECB8016A22EC700277E29 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		52DB6CD816990BD300585DF5 = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +159,6 @@
 				522ECB8416A22EDB00277E29 /* StatusItemView.m */,
 				522ECB8516A22EDB00277E29 /* BackgroundView.h */,
 				522ECB8616A22EDB00277E29 /* BackgroundView.m */,
-				522ECB8016A22EC700277E29 /* Views */,
 				522ECB7916A2296200277E29 /* MenubarController.h */,
 				522ECB7A16A2296200277E29 /* MenubarController.m */,
 				522ECB7B16A2296200277E29 /* PanelController.h */,
