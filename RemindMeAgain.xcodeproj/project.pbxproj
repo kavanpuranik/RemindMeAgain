@@ -153,7 +153,6 @@
 		52DB6CED16990BD300585DF5 /* RemindMeAgain */ = {
 			isa = PBXGroup;
 			children = (
-				529D0F9E16A2838300AD8301 /* PanelController.m */,
 				529D0F9F16A2838300AD8301 /* BackgroundView.h */,
 				529D0FA016A2838300AD8301 /* BackgroundView.m */,
 				529D0FA116A2838300AD8301 /* MenubarController.h */,
@@ -161,6 +160,7 @@
 				529D0FA316A2838300AD8301 /* Panel.h */,
 				529D0FA416A2838300AD8301 /* Panel.m */,
 				529D0FA516A2838300AD8301 /* PanelController.h */,
+				529D0F9E16A2838300AD8301 /* PanelController.m */,
 				529D0FA616A2838300AD8301 /* StatusItemView.h */,
 				529D0FA716A2838300AD8301 /* StatusItemView.m */,
 				52DB6CF916990BD300585DF5 /* HWAppDelegate.h */,

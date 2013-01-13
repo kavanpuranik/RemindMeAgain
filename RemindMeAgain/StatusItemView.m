@@ -22,6 +22,7 @@
         _statusItem = statusItem;
         _statusItem.view = self;
     }
+
     return self;
 }
 
