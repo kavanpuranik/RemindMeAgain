@@ -187,6 +187,11 @@
     [NSAnimationContext endGrouping];
     
     [self initFormFields];
+    
+    // Default cursor to reminder text field
+    [reminderTextField selectText:self];
+    [[reminderTextField currentEditor] setSelectedRange:NSMakeRange([[reminderTextField stringValue] length], 0)];
+    
     NSLog(@"opening panel");
 }
 
@@ -222,7 +227,7 @@
     if (reminderPeriodInSeconds == 0){
         reminderPeriodInSeconds = 15 * 60;
     }
-   // [self setReminderPeriod:reminderPeriodInSeconds];
+    [self setReminderPeriod:reminderPeriodInSeconds];
 }
 
 - (void) startStopReminder {
