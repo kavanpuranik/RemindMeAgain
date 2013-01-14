@@ -10,6 +10,7 @@
 		5223B6C116A259D70095BA91 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6BF16A259D70095BA91 /* Status.png */; };
 		5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6C016A259D70095BA91 /* StatusHighlighted.png */; };
 		522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522ECB9216A2428800277E29 /* StatusBarPopup.xib */; };
+		5237D3B816A3AD2700DAC491 /* NumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5237D3B716A3AD2700DAC491 /* NumberField.m */; };
 		529D0FA816A2838300AD8301 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0F9E16A2838300AD8301 /* PanelController.m */; };
 		529D0FA916A2838300AD8301 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA016A2838300AD8301 /* BackgroundView.m */; };
 		529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA216A2838300AD8301 /* MenubarController.m */; };
@@ -41,6 +42,8 @@
 		5223B6BF16A259D70095BA91 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
 		5223B6C016A259D70095BA91 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
 		522ECB9216A2428800277E29 /* StatusBarPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarPopup.xib; sourceTree = "<group>"; };
+		5237D3B516A3ACD000DAC491 /* NumberField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberField.h; sourceTree = "<group>"; };
+		5237D3B716A3AD2700DAC491 /* NumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberField.m; sourceTree = "<group>"; };
 		529D0F9E16A2838300AD8301 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
 		529D0F9F16A2838300AD8301 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
 		529D0FA016A2838300AD8301 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				529D0FA716A2838300AD8301 /* StatusItemView.m */,
 				529D0F9F16A2838300AD8301 /* BackgroundView.h */,
 				529D0FA016A2838300AD8301 /* BackgroundView.m */,
+				5237D3B516A3ACD000DAC491 /* NumberField.h */,
+				5237D3B716A3AD2700DAC491 /* NumberField.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */,
 				529D0FAB16A2838300AD8301 /* Panel.m in Sources */,
 				529D0FAC16A2838300AD8301 /* StatusItemView.m in Sources */,
+				5237D3B816A3AD2700DAC491 /* NumberField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

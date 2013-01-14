@@ -1,5 +1,6 @@
 #import "BackgroundView.h"
 #import "StatusItemView.h"
+#import "NumberField.h"
 
 @class PanelController;
 
@@ -19,9 +20,9 @@
     __unsafe_unretained BackgroundView *_backgroundView;
     __unsafe_unretained id<PanelControllerDelegate> _delegate;
     
-    __unsafe_unretained IBOutlet NSTextField *reminderTextField;
-    __unsafe_unretained IBOutlet NSDatePicker *periodPicker;
-    __unsafe_unretained IBOutlet NSDatePickerCell *periodPickerCell;
+    __unsafe_unretained IBOutlet NSTextField *reminderTextField;    
+    __unsafe_unretained IBOutlet NumberField *reminderPeriodField;
+
     __unsafe_unretained IBOutlet NSTextField *statusLabel;
     __unsafe_unretained IBOutlet NSButton *startStopButton;
     __unsafe_unretained IBOutlet NSButton *quitButton;

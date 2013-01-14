@@ -186,7 +186,6 @@
     [[panel animator] setAlphaValue:1];
     [NSAnimationContext endGrouping];
     
-    [self initDatePicker];
     [self initFormFields];
     NSLog(@"opening panel");
 }
@@ -223,7 +222,7 @@
     if (reminderPeriodInSeconds == 0){
         reminderPeriodInSeconds = 15 * 60;
     }
-    [self setReminderPeriod:reminderPeriodInSeconds];
+   // [self setReminderPeriod:reminderPeriodInSeconds];
 }
 
 - (void) startStopReminder {
@@ -232,15 +231,15 @@
         [startStopButton setTitle:@"Turn Off"];
         [statusLabel setHidden:FALSE];
         [statusLabel setStringValue: @"Reminder is On"];        
-        [periodPicker setEnabled:FALSE];
-        defaultBackgroundColor = [periodPicker backgroundColor];
-        [periodPicker setBackgroundColor:[NSColor lightGrayColor]];
+        [reminderPeriodField setEnabled:FALSE];
+        defaultBackgroundColor = [reminderPeriodField backgroundColor];
+        [reminderPeriodField setBackgroundColor:[NSColor lightGrayColor]];
     } else {
         [self stopReminderTimer];
         [startStopButton setTitle:@"Turn On"];
         [statusLabel setStringValue: @"Reminder is Off"];
-        [periodPicker setEnabled:TRUE];
-        [periodPicker setBackgroundColor:self->defaultBackgroundColor];
+        [reminderPeriodField setEnabled:TRUE];
+        [reminderPeriodField setBackgroundColor:self->defaultBackgroundColor];
     }
 }
 
@@ -260,8 +259,8 @@
 }
 
 - (void)startReminder:(NSTimer*)theTimer {
-    NSDate *startDate = [[theTimer userInfo] objectForKey:@"StartDate"];
-    NSLog(@"Notifying at %@", startDate);
+   // NSDate *startDate = [[theTimer userInfo] objectForKey:@"StartDate"];
+   // NSLog(@"Notifying at %@", startDate);
     NSString* reminderText = [reminderTextField stringValue];
     
     NSUserNotification *notification = [[NSUserNotification alloc] init];
@@ -290,23 +289,12 @@
     return YES;
 }
 
-- (void)initDatePicker
-{
-    NSLocale*  my24HourLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
-    [periodPickerCell setLocale:my24HourLocale];
-    [periodPickerCell setFormatter:[[NSDateFormatter alloc] initWithDateFormat:@"%H:%M" allowNaturalLanguage:NO] ];
-}
-
 - (NSInteger)getReminderPeriod {
-    NSDate *periodDate = [periodPicker dateValue];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:periodDate];
-    NSInteger hours = [components hour];
-    NSInteger minutes = [components minute];
-    NSInteger intervalInSeconds = hours * 60 * 60 + minutes * 60;
     
-    NSLog(@"hours %ld minutes %ld", hours, minutes);
-    NSLog(@"Interval set to %ld seconds", intervalInSeconds);
+    NSInteger minutes = [reminderPeriodField integerValue];
+    NSInteger intervalInSeconds = minutes * 60;
+    
+    NSLog(@"Reminder set to %ld seconds", intervalInSeconds);
     return intervalInSeconds;
 }
 
@@ -314,13 +302,7 @@
     NSInteger reminderPeriodInMinutes = periodInSeconds / 60;
     NSLog(@"Reminder in minutes is %ld", reminderPeriodInMinutes);
     
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    [dateComponents setMinute: reminderPeriodInMinutes % 60];
-    [dateComponents setHour: reminderPeriodInMinutes / 60];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate* result = [calendar dateFromComponents:dateComponents];
-    
-    [periodPicker setDateValue:result];
+    [reminderPeriodField setIntegerValue:reminderPeriodInMinutes];
 }
 
 - (void) quitApplication {

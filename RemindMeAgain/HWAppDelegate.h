@@ -12,13 +12,6 @@
 
 @interface HWAppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
 {
-    
-    IBOutlet NSTextField *reminderTextField;
-    IBOutlet NSDatePicker *periodPicker;
-    IBOutlet NSDatePickerCell *periodPickerCell;
-    IBOutlet NSTextField *statusLabel;
-    IBOutlet NSButton *startStopButton;
-
 }
 
 
