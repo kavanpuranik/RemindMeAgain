@@ -25,6 +25,8 @@
     __unsafe_unretained IBOutlet NSTextField *statusLabel;
     __unsafe_unretained IBOutlet NSButton *startStopButton;
     __unsafe_unretained IBOutlet NSButton *quitButton;
+    
+    NSColor *defaultBackgroundColor;
 }
 
 @property (nonatomic, unsafe_unretained) IBOutlet BackgroundView *backgroundView;

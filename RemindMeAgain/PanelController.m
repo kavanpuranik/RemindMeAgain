@@ -52,7 +52,8 @@
     [[self window] setFrame:panelRect display:NO];
     
     [startStopButton setAction:@selector(startStopReminder)];
-    [quitButton setAction:@selector(quitApplication)];
+    [quitButton setAction:@selector(quitApplication)];    
+    [statusLabel setHidden:TRUE];
 }
 
 #pragma mark - Public accessors
@@ -187,7 +188,7 @@
     
     [self initDatePicker];
     [self initFormFields];
-    NSLog(@"application started");
+    NSLog(@"opening panel");
 }
 
 - (void)closePanel
@@ -197,7 +198,7 @@
     [prefs setInteger:[self getReminderPeriod] forKey:@"reminderPeriod"];
     [prefs synchronize];
     
-    NSLog(@"application ended");
+    NSLog(@"closing panel");
     
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:CLOSE_DURATION];
@@ -229,11 +230,17 @@
     if ([[startStopButton title] isEqualToString:@"Turn On"]){
         [self startReminderTimer];
         [startStopButton setTitle:@"Turn Off"];
-        [statusLabel setStringValue: @"Reminder is On"];
+        [statusLabel setHidden:FALSE];
+        [statusLabel setStringValue: @"Reminder is On"];        
+        [periodPicker setEnabled:FALSE];
+        defaultBackgroundColor = [periodPicker backgroundColor];
+        [periodPicker setBackgroundColor:[NSColor lightGrayColor]];
     } else {
         [self stopReminderTimer];
         [startStopButton setTitle:@"Turn On"];
         [statusLabel setStringValue: @"Reminder is Off"];
+        [periodPicker setEnabled:TRUE];
+        [periodPicker setBackgroundColor:self->defaultBackgroundColor];
     }
 }
 
