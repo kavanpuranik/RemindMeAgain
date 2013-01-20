@@ -41,6 +41,7 @@
 - (void)closePanel;
 
 @property (weak) NSTimer *repeatingTimer;
+@property NSInteger minutesRemainingForNextReminder;
 
 - (NSDictionary *)userInfo;
 

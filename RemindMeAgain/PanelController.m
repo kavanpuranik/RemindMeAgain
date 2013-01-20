@@ -234,8 +234,7 @@
     if ([[startStopButton title] isEqualToString:@"Turn On"]){
         [self startReminderTimer];
         [startStopButton setTitle:@"Turn Off"];
-        [statusLabel setHidden:FALSE];
-        [statusLabel setStringValue: @"Reminder is On"];        
+        [statusLabel setHidden:FALSE];      
         [reminderPeriodField setEnabled:FALSE];
         defaultBackgroundColor = [reminderPeriodField backgroundColor];
         [reminderPeriodField setBackgroundColor:[NSColor lightGrayColor]];
@@ -253,17 +252,29 @@
     // Cancel any preexisting timer
     [self.repeatingTimer invalidate];
     
-    NSInteger intervalInSeconds = [self getReminderPeriod];
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval: intervalInSeconds
+    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 5
                                                       target:self selector:@selector(startReminder:)
                                                     userInfo:[self userInfo] repeats:YES];
     
-    self.repeatingTimer = timer;
-    [statusLabel setStringValue: @"Reminder is turned on."];
+    self.minutesRemainingForNextReminder = [self getReminderPeriod];
+    [self displayNextReminderMessage];
     NSLog(@"Started Timer...");
 }
 
 - (void)startReminder:(NSTimer*)theTimer {
+    
+    self.minutesRemainingForNextReminder --;
+    NSLog(@"minutesRemainingForNextReminder: %ld ", self.minutesRemainingForNextReminder);
+    
+    if (self.minutesRemainingForNextReminder > 0){
+        
+       [self displayNextReminderMessage];
+       return;
+    }
+    
+    self.minutesRemainingForNextReminder = [self getReminderPeriod];
+    [self displayNextReminderMessage];
+    
    // NSDate *startDate = [[theTimer userInfo] objectForKey:@"StartDate"];
    // NSLog(@"Notifying at %@", startDate);
     NSString* reminderText = [reminderTextField stringValue];
@@ -273,7 +284,6 @@
     notification.informativeText = reminderText;
     notification.soundName = NSUserNotificationDefaultSoundName;
     notification.hasActionButton = FALSE;
-    //    notification.actionButtonTitle = @"Open";
     [notification setOtherButtonTitle: @"Close"];
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
@@ -295,19 +305,18 @@
 }
 
 - (NSInteger)getReminderPeriod {
-    
     NSInteger minutes = [reminderPeriodField integerValue];
-    NSInteger intervalInSeconds = minutes * 60;
-    
-    NSLog(@"Reminder set to %ld seconds", intervalInSeconds);
-    return intervalInSeconds;
+    NSLog(@"Reminder set to %ld minutes", minutes);
+    return minutes;
 }
 
-- (void)setReminderPeriod:(NSInteger)periodInSeconds {
-    NSInteger reminderPeriodInMinutes = periodInSeconds / 60;
-    NSLog(@"Reminder in minutes is %ld", reminderPeriodInMinutes);
-    
+- (void)setReminderPeriod:(NSInteger)reminderPeriodInMinutes {
+    NSLog(@"Reminder in minutes is %ld", reminderPeriodInMinutes);    
     [reminderPeriodField setIntegerValue:reminderPeriodInMinutes];
+}
+
+- (void)displayNextReminderMessage {
+    [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld minutes", self.minutesRemainingForNextReminder]];
 }
 
 - (void) quitApplication {
