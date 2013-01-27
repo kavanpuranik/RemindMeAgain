@@ -142,7 +142,6 @@
 							<string key="NSFrame">{{221, 31}, {234, 24}}</string>
 							<reference key="NSSuperview" ref="290197886"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="441058696">
@@ -194,7 +193,7 @@
 						<object class="NSTextField" id="508356756">
 							<reference key="NSNextResponder" ref="290197886"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{13, 143}, {114, 25}}</string>
+							<string key="NSFrame">{{14, 142}, {114, 25}}</string>
 							<reference key="NSSuperview" ref="290197886"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="337393210"/>
@@ -215,7 +214,7 @@
 						<object class="NSTextField" id="524455343">
 							<reference key="NSNextResponder" ref="290197886"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{181, 151}, {100, 17}}</string>
+							<string key="NSFrame">{{169, 150}, {100, 17}}</string>
 							<reference key="NSSuperview" ref="290197886"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="534378335"/>
@@ -261,7 +260,7 @@
 						<object class="NSTextField" id="337393210">
 							<reference key="NSNextResponder" ref="290197886"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{129, 148}, {43, 22}}</string>
+							<string key="NSFrame">{{129, 147}, {35, 22}}</string>
 							<reference key="NSSuperview" ref="290197886"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="524455343"/>
@@ -269,7 +268,7 @@
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="881818620">
 								<int key="NSCellFlags">-1804599231</int>
-								<int key="NSCellFlags2">272630784</int>
+								<int key="NSCellFlags2">71304192</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="928619357"/>
 								<string key="NSCellIdentifier">_NS:9</string>

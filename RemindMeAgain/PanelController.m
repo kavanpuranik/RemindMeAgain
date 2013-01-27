@@ -252,7 +252,7 @@
     // Cancel any preexisting timer
     [self.repeatingTimer invalidate];
     
-    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 5
+    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 60
                                                       target:self selector:@selector(startReminder:)
                                                     userInfo:[self userInfo] repeats:YES];
     
