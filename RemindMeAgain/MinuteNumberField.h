@@ -1,5 +1,5 @@
 
-@interface NumberField : NSTextField { }
+@interface MinuteNumberField : NSTextField { }
 
 -(void) textDidChange:(NSNotification *)aNotification;
 

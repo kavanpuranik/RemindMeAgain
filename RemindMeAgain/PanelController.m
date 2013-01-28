@@ -223,11 +223,11 @@
     }
     [reminderTextField setStringValue:reminderText];
     
-    NSInteger reminderPeriodInSeconds = [prefs integerForKey:@"reminderPeriod"];
-    if (reminderPeriodInSeconds == 0){
-        reminderPeriodInSeconds = 15 * 60;
+    NSInteger reminderPeriodInMinutes = [prefs integerForKey:@"reminderPeriod"];
+    if (reminderPeriodInMinutes == 0){
+        reminderPeriodInMinutes = 30;
     }
-    [self setReminderPeriod:reminderPeriodInSeconds];
+    [self setReminderPeriod:reminderPeriodInMinutes];
 }
 
 - (void) startStopReminder {
@@ -235,15 +235,20 @@
         [self startReminderTimer];
         [startStopButton setTitle:@"Turn Off"];
         [statusLabel setHidden:FALSE];      
-        [reminderPeriodField setEnabled:FALSE];
-        defaultBackgroundColor = [reminderPeriodField backgroundColor];
-        [reminderPeriodField setBackgroundColor:[NSColor lightGrayColor]];
+        [reminderMinutePeriodField setEnabled:FALSE];
+        defaultBackgroundColor = [reminderMinutePeriodField backgroundColor];
+        [reminderMinutePeriodField setBackgroundColor:[NSColor lightGrayColor]];
+        [reminderHourPeriodField setEnabled:FALSE];
+        defaultBackgroundColor = [reminderHourPeriodField backgroundColor];
+        [reminderHourPeriodField setBackgroundColor:[NSColor lightGrayColor]];
     } else {
         [self stopReminderTimer];
         [startStopButton setTitle:@"Turn On"];
         [statusLabel setStringValue: @"Reminder is Off"];
-        [reminderPeriodField setEnabled:TRUE];
-        [reminderPeriodField setBackgroundColor:self->defaultBackgroundColor];
+        [reminderMinutePeriodField setEnabled:TRUE];
+        [reminderMinutePeriodField setBackgroundColor:self->defaultBackgroundColor];
+        [reminderHourPeriodField setEnabled:TRUE];
+        [reminderHourPeriodField setBackgroundColor:self->defaultBackgroundColor];
     }
 }
 
@@ -305,14 +310,19 @@
 }
 
 - (NSInteger)getReminderPeriod {
-    NSInteger minutes = [reminderPeriodField integerValue];
-    NSLog(@"Reminder set to %ld minutes", minutes);
+    NSInteger minutes = [reminderMinutePeriodField integerValue];
+    NSInteger hours = [reminderHourPeriodField integerValue];
+    minutes = hours * 60 + minutes;
+    NSLog(@"Reminder is set to %ld minutes", minutes);
     return minutes;
 }
 
 - (void)setReminderPeriod:(NSInteger)reminderPeriodInMinutes {
-    NSLog(@"Reminder in minutes is %ld", reminderPeriodInMinutes);    
-    [reminderPeriodField setIntegerValue:reminderPeriodInMinutes];
+    NSLog(@"Reminder in minutes is %ld", reminderPeriodInMinutes);
+    NSInteger hours = reminderPeriodInMinutes / 60;
+    NSInteger minutes = reminderPeriodInMinutes % 60;
+    [reminderHourPeriodField setIntegerValue:hours];
+    [reminderMinutePeriodField setIntegerValue:minutes];
 }
 
 - (void)displayNextReminderMessage {
