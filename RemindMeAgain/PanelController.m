@@ -236,19 +236,13 @@
         [startStopButton setTitle:@"Turn Off"];
         [statusLabel setHidden:FALSE];      
         [reminderMinutePeriodField setEnabled:FALSE];
-        defaultBackgroundColor = [reminderMinutePeriodField backgroundColor];
-        [reminderMinutePeriodField setBackgroundColor:[NSColor lightGrayColor]];
         [reminderHourPeriodField setEnabled:FALSE];
-        defaultBackgroundColor = [reminderHourPeriodField backgroundColor];
-        [reminderHourPeriodField setBackgroundColor:[NSColor lightGrayColor]];
     } else {
         [self stopReminderTimer];
         [startStopButton setTitle:@"Turn On"];
         [statusLabel setStringValue: @"Reminder is Off"];
         [reminderMinutePeriodField setEnabled:TRUE];
-        [reminderMinutePeriodField setBackgroundColor:self->defaultBackgroundColor];
         [reminderHourPeriodField setEnabled:TRUE];
-        [reminderHourPeriodField setBackgroundColor:self->defaultBackgroundColor];
     }
 }
 
@@ -326,7 +320,14 @@
 }
 
 - (void)displayNextReminderMessage {
-    [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld minutes", self.minutesRemainingForNextReminder]];
+    NSInteger hours = self.minutesRemainingForNextReminder / 60;
+    NSInteger minutes = self.minutesRemainingForNextReminder % 60;
+    
+    if (hours > 0){
+        [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld hr %ld min", hours, minutes]];
+    } else {
+        [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld min", minutes]];
+    }
 }
 
 - (void) quitApplication {
