@@ -240,7 +240,7 @@
     } else {
         [self stopReminderTimer];
         [startStopButton setTitle:@"Turn On"];
-        [statusLabel setStringValue: @"Reminder is Off"];
+        [statusLabel setStringValue: @" "];
         [reminderMinutePeriodField setEnabled:TRUE];
         [reminderHourPeriodField setEnabled:TRUE];
     }
