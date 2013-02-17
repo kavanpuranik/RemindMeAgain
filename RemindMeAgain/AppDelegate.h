@@ -10,7 +10,7 @@
 #import "MenubarController.h"
 #import "PanelController.h"
 
-@interface HWAppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
 {
 }
 

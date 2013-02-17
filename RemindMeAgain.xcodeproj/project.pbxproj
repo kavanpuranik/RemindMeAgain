@@ -21,7 +21,7 @@
 		52DB6CF216990BD300585DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CF016990BD300585DF5 /* InfoPlist.strings */; };
 		52DB6CF416990BD300585DF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6CF316990BD300585DF5 /* main.m */; };
 		52DB6CF816990BD300585DF5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CF616990BD300585DF5 /* Credits.rtf */; };
-		52DB6CFB16990BD300585DF5 /* HWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */; };
+		52DB6CFB16990BD300585DF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6CFA16990BD300585DF5 /* AppDelegate.m */; };
 		52DB6D0616990BD400585DF5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6D0516990BD400585DF5 /* SenTestingKit.framework */; };
 		52DB6D0716990BD400585DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
 		52DB6D0F16990BD400585DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6D0D16990BD400585DF5 /* InfoPlist.strings */; };
@@ -67,8 +67,8 @@
 		52DB6CF316990BD300585DF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52DB6CF516990BD300585DF5 /* RemindMeAgain-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RemindMeAgain-Prefix.pch"; sourceTree = "<group>"; };
 		52DB6CF716990BD300585DF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		52DB6CF916990BD300585DF5 /* HWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWAppDelegate.h; sourceTree = "<group>"; };
-		52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWAppDelegate.m; sourceTree = "<group>"; };
+		52DB6CF916990BD300585DF5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		52DB6CFA16990BD300585DF5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		52DB6CFD16990BD400585DF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		52DB6D0416990BD400585DF5 /* RemindMeAgainTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindMeAgainTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DB6D0516990BD400585DF5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -218,8 +218,8 @@
 		52FCCDF816A3568A00427E6C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				52DB6CF916990BD300585DF5 /* HWAppDelegate.h */,
-				52DB6CFA16990BD300585DF5 /* HWAppDelegate.m */,
+				52DB6CF916990BD300585DF5 /* AppDelegate.h */,
+				52DB6CFA16990BD300585DF5 /* AppDelegate.m */,
 				529D0FA116A2838300AD8301 /* MenubarController.h */,
 				529D0FA216A2838300AD8301 /* MenubarController.m */,
 				529D0FA516A2838300AD8301 /* PanelController.h */,
@@ -351,7 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52DB6CF416990BD300585DF5 /* main.m in Sources */,
-				52DB6CFB16990BD300585DF5 /* HWAppDelegate.m in Sources */,
+				52DB6CFB16990BD300585DF5 /* AppDelegate.m in Sources */,
 				529D0FA816A2838300AD8301 /* PanelController.m in Sources */,
 				529D0FA916A2838300AD8301 /* BackgroundView.m in Sources */,
 				529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */,

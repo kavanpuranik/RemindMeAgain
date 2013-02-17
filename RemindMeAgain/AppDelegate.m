@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Kavan Puranik. All rights reserved.
 //
 
-#import "HWAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation HWAppDelegate
+@implementation AppDelegate
 
 @synthesize panelController = _panelController;
 @synthesize menubarController = _menubarController;
