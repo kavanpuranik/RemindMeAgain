@@ -11,6 +11,7 @@
 		5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6C016A259D70095BA91 /* StatusHighlighted.png */; };
 		522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522ECB9216A2428800277E29 /* StatusBarPopup.xib */; };
 		5237D3B816A3AD2700DAC491 /* MinuteNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */; };
+		527CB29D16D1BDEA006C88F3 /* RemindMeAgain.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */; };
 		529D0FA816A2838300AD8301 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0F9E16A2838300AD8301 /* PanelController.m */; };
 		529D0FA916A2838300AD8301 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA016A2838300AD8301 /* BackgroundView.m */; };
 		529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA216A2838300AD8301 /* MenubarController.m */; };
@@ -45,6 +46,7 @@
 		522ECB9216A2428800277E29 /* StatusBarPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarPopup.xib; sourceTree = "<group>"; };
 		5237D3B516A3ACD000DAC491 /* MinuteNumberField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinuteNumberField.h; sourceTree = "<group>"; };
 		5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinuteNumberField.m; sourceTree = "<group>"; };
+		527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = RemindMeAgain.iconset; sourceTree = "<group>"; };
 		529D0F9E16A2838300AD8301 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
 		529D0F9F16A2838300AD8301 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
 		529D0FA016A2838300AD8301 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		52DB6CD816990BD300585DF5 = {
 			isa = PBXGroup;
 			children = (
+				527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */,
 				5223B6BC16A259B00095BA91 /* User Interface */,
 				52DB6CED16990BD300585DF5 /* RemindMeAgain */,
 				52DB6D0A16990BD400585DF5 /* RemindMeAgainTests */,
@@ -316,6 +319,7 @@
 				5223B6C116A259D70095BA91 /* Status.png in Resources */,
 				5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */,
 				52FCCE0216A35C4100427E6C /* MainMenu.xib in Resources */,
+				527CB29D16D1BDEA006C88F3 /* RemindMeAgain.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
