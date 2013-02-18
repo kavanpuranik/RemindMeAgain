@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		520E2DE716D2A5B000BEE861 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
+		521D272016D2CF9700F40A82 /* RemindMeAgain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RemindMeAgain.entitlements; sourceTree = "<group>"; };
 		522ECB9216A2428800277E29 /* StatusBarPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarPopup.xib; sourceTree = "<group>"; };
 		5237D3B516A3ACD000DAC491 /* MinuteNumberField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinuteNumberField.h; sourceTree = "<group>"; };
 		5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinuteNumberField.m; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 		52DB6CED16990BD300585DF5 /* RemindMeAgain */ = {
 			isa = PBXGroup;
 			children = (
+				521D272016D2CF9700F40A82 /* RemindMeAgain.entitlements */,
 				52FCCDF616A3564F00427E6C /* Views */,
 				52FCCDF816A3568A00427E6C /* Controllers */,
 				52DB6CEE16990BD300585DF5 /* Supporting Files */,
@@ -476,13 +478,13 @@
 		52DB6D1616990BD400585DF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RemindMeAgain/RemindMeAgain.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RemindMeAgain/RemindMeAgain-Prefix.pch";
 				INFOPLIST_FILE = "RemindMeAgain/RemindMeAgain-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -490,13 +492,13 @@
 		52DB6D1716990BD400585DF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RemindMeAgain/RemindMeAgain.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RemindMeAgain/RemindMeAgain-Prefix.pch";
 				INFOPLIST_FILE = "RemindMeAgain/RemindMeAgain-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
