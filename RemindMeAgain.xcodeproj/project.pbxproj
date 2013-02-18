@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5223B6C116A259D70095BA91 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6BF16A259D70095BA91 /* Status.png */; };
-		5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5223B6C016A259D70095BA91 /* StatusHighlighted.png */; };
+		520E2DE816D2A5B000BEE861 /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 520E2DE716D2A5B000BEE861 /* icon_16x16.png */; };
 		522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522ECB9216A2428800277E29 /* StatusBarPopup.xib */; };
 		5237D3B816A3AD2700DAC491 /* MinuteNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */; };
 		527CB29D16D1BDEA006C88F3 /* RemindMeAgain.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */; };
+		5295925C16D2B243003C3A5E /* icon_16x16_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5295925B16D2B243003C3A5E /* icon_16x16_highlighted.png */; };
 		529D0FA816A2838300AD8301 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0F9E16A2838300AD8301 /* PanelController.m */; };
 		529D0FA916A2838300AD8301 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA016A2838300AD8301 /* BackgroundView.m */; };
 		529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA216A2838300AD8301 /* MenubarController.m */; };
@@ -41,12 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5223B6BF16A259D70095BA91 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
-		5223B6C016A259D70095BA91 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
+		520E2DE716D2A5B000BEE861 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
 		522ECB9216A2428800277E29 /* StatusBarPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarPopup.xib; sourceTree = "<group>"; };
 		5237D3B516A3ACD000DAC491 /* MinuteNumberField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinuteNumberField.h; sourceTree = "<group>"; };
 		5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinuteNumberField.m; sourceTree = "<group>"; };
 		527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = RemindMeAgain.iconset; sourceTree = "<group>"; };
+		5295925B16D2B243003C3A5E /* icon_16x16_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16_highlighted.png; sourceTree = "<group>"; };
 		529D0F9E16A2838300AD8301 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
 		529D0F9F16A2838300AD8301 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
 		529D0FA016A2838300AD8301 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		5223B6BE16A259C20095BA91 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				5223B6BF16A259D70095BA91 /* Status.png */,
-				5223B6C016A259D70095BA91 /* StatusHighlighted.png */,
+				5295925B16D2B243003C3A5E /* icon_16x16_highlighted.png */,
+				520E2DE716D2A5B000BEE861 /* icon_16x16.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -316,10 +316,10 @@
 				52DB6CF216990BD300585DF5 /* InfoPlist.strings in Resources */,
 				52DB6CF816990BD300585DF5 /* Credits.rtf in Resources */,
 				522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */,
-				5223B6C116A259D70095BA91 /* Status.png in Resources */,
-				5223B6C216A259D70095BA91 /* StatusHighlighted.png in Resources */,
 				52FCCE0216A35C4100427E6C /* MainMenu.xib in Resources */,
 				527CB29D16D1BDEA006C88F3 /* RemindMeAgain.iconset in Resources */,
+				520E2DE816D2A5B000BEE861 /* icon_16x16.png in Resources */,
+				5295925C16D2B243003C3A5E /* icon_16x16_highlighted.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
