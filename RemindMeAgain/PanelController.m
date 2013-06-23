@@ -6,8 +6,7 @@
 #define OPEN_DURATION .15
 #define CLOSE_DURATION .1
 
-#define POPUP_HEIGHT 200
-#define PANEL_WIDTH 480
+#define POPUP_HEIGHT 350
 #define MENU_ANIMATION_DURATION .1
 
 #pragma mark -
@@ -50,6 +49,12 @@
     NSRect panelRect = [[self window] frame];
     panelRect.size.height = POPUP_HEIGHT;
     [[self window] setFrame:panelRect display:NO];
+    
+    // Tab selection
+    [tabView setDelegate: self];
+    NSTabViewItem *firstTabView = [self->tabView tabViewItemAtIndex:0];
+    NSTabViewItem *secondTabView = [self->tabView tabViewItemAtIndex:1];
+    [secondTabView setView: [firstTabView view]];
     
     [startStopButton setAction:@selector(startStopReminder)];
     [quitButton setAction:@selector(quitApplication)];    
@@ -108,6 +113,29 @@
     
 }
 
+#pragma mark - NSTabView
+
+- (void)tabView:(NSTabView *)tabView willSelectTabViewItem:(NSTabViewItem *)tabViewItem
+{
+    NSString *tabViewItemId = [tabViewItem identifier];
+    
+    NSLog(@"tabViewItemId  %@ ", tabViewItemId);
+
+    if ([tabViewItemId isEqualToString: @"1"])
+    {
+        
+
+    } else if ([tabViewItemId isEqualToString: @"2"])
+    {
+        
+        
+    } else if ([tabViewItemId isEqualToString: @"3"])
+    {
+        
+        [reminderTextField setHidden:FALSE];
+    }
+}
+
 #pragma mark - Keyboard
 
 - (void)cancelOperation:(id)sender
@@ -150,7 +178,6 @@
     NSRect statusRect = [self statusRectForWindow:panel];
 
     NSRect panelRect = [panel frame];
-    panelRect.size.width = PANEL_WIDTH;
     panelRect.origin.x = roundf(NSMidX(statusRect) - NSWidth(panelRect) / 2);
     panelRect.origin.y = NSMaxY(statusRect) - NSHeight(panelRect);
     

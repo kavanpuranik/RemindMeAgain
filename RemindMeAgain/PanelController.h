@@ -14,11 +14,14 @@
 
 #pragma mark -
 
-@interface PanelController : NSWindowController <NSWindowDelegate, NSUserNotificationCenterDelegate>
+@interface PanelController : NSWindowController <NSWindowDelegate, NSUserNotificationCenterDelegate, NSTabViewDelegate>
 {
     BOOL _hasActivePanel;
+    
     __unsafe_unretained BackgroundView *_backgroundView;
     __unsafe_unretained id<PanelControllerDelegate> _delegate;
+    
+    __unsafe_unretained IBOutlet NSTabView *tabView;
     
     __unsafe_unretained IBOutlet NSTextField *reminderTextField;    
     __unsafe_unretained IBOutlet MinuteNumberField *reminderMinutePeriodField;
