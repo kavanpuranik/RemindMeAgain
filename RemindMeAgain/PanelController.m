@@ -117,23 +117,12 @@
 
 - (void)tabView:(NSTabView *)tabView willSelectTabViewItem:(NSTabViewItem *)tabViewItem
 {
-    NSString *tabViewItemId = [tabViewItem identifier];
-    
-    NSLog(@"tabViewItemId  %@ ", tabViewItemId);
+    [self saveReminder];
+}
 
-    if ([tabViewItemId isEqualToString: @"1"])
-    {
-        
-
-    } else if ([tabViewItemId isEqualToString: @"2"])
-    {
-        
-        
-    } else if ([tabViewItemId isEqualToString: @"3"])
-    {
-        
-        [reminderTextField setHidden:FALSE];
-    }
+- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem
+{
+    [self displaySelectedTab];
 }
 
 #pragma mark - Keyboard
@@ -213,21 +202,14 @@
     [[panel animator] setAlphaValue:1];
     [NSAnimationContext endGrouping];
     
-    [self initFormFields];
-    
-    // Default cursor to reminder text field
-    [reminderTextField selectText:self];
-    [[reminderTextField currentEditor] setSelectedRange:NSMakeRange([[reminderTextField stringValue] length], 0)];
+    [self displaySelectedTab];
     
     NSLog(@"opening panel");
 }
 
 - (void)closePanel
 {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:[reminderTextField stringValue] forKey:@"reminderText"];
-    [prefs setInteger:[self getReminderPeriod] forKey:@"reminderPeriod"];
-    [prefs synchronize];
+    [self saveReminder];
     
     NSLog(@"closing panel");
     
@@ -242,19 +224,65 @@
     });
 }
 
-- (void)initFormFields {
+- (void) displaySelectedTab
+{
+    NSString *tabViewItemId = [[tabView selectedTabViewItem] identifier];
+    
+    NSLog(@"tabViewItemId  %@ ", tabViewItemId);
+    
+    if ([tabViewItemId isEqualToString: @"preferences_tab"])
+    {
+        // TODO init preference
+    } else {
+        
+        [self initFormFields:[tabViewItemId intValue]];
+        // Default cursor to reminder text field
+        [reminderTextField selectText:self];
+        [[reminderTextField currentEditor] setSelectedRange:NSMakeRange([[reminderTextField stringValue] length], 0)];
+    }
+}
+
+- (void)initFormFields: (NSInteger) reminderId
+{
+    NSString *internalReminderId = [self getInternalReminderId:reminderId];
+
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSString *reminderText = [prefs stringForKey:@"reminderText"];
+    NSString *reminderText = [prefs stringForKey:[@"reminderText" stringByAppendingString:internalReminderId]];
     if (reminderText == nil){
         reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
     }
     [reminderTextField setStringValue:reminderText];
     
-    NSInteger reminderPeriodInMinutes = [prefs integerForKey:@"reminderPeriod"];
+    NSInteger reminderPeriodInMinutes = [prefs integerForKey:[@"reminderPeriod" stringByAppendingString:internalReminderId]];
     if (reminderPeriodInMinutes == 0){
         reminderPeriodInMinutes = 30;
     }
     [self setReminderPeriod:reminderPeriodInMinutes];
+}
+
+- (void)saveReminder
+{
+    NSString *tabViewItemId = [[tabView selectedTabViewItem] identifier];    
+    NSLog(@"tabViewItemId  %@ ", tabViewItemId);
+    
+    if ([tabViewItemId isEqualToString: @"preferences_tab"]){
+        return;
+    }
+    
+    NSString *internalReminderId = [self getInternalReminderId:[tabViewItemId intValue]];    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:[reminderTextField stringValue] forKey:[@"reminderText" stringByAppendingString:internalReminderId]];
+    [prefs setInteger:[self getReminderPeriod] forKey:[@"reminderPeriod" stringByAppendingString:internalReminderId]];
+    [prefs synchronize];
+}
+
+// For backwards compatibility until I figure out how to migrate data on application re-install
+- (NSString *)getInternalReminderId:(NSInteger)reminderId {
+    NSString* internalReminderId = @"";
+    if (reminderId == 2){
+        internalReminderId = @"_two";
+    }
+    return internalReminderId;
 }
 
 - (void) startStopReminder {
