@@ -24,6 +24,7 @@
     if (self != nil)
     {
         _delegate = delegate;
+        reminders = [Reminders new];
     }
     return self;
 }
@@ -303,54 +304,31 @@
 
 - (void) startReminderTimer {
     
-    // Cancel any preexisting timer
-    [self.repeatingTimer invalidate];
+    NSString *tabViewItemId = [[tabView selectedTabViewItem] identifier];
+    NSLog(@"tabViewItemId  %@ ", tabViewItemId);
     
-    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 60
-                                                      target:self selector:@selector(startReminder:)
-                                                    userInfo:[self userInfo] repeats:YES];
+    Reminder* reminder = [reminders getReminderById:tabViewItemId];
+    [reminder setReminderPeriod: [self getReminderPeriod]];
     
-    self.minutesRemainingForNextReminder = [self getReminderPeriod];
-    [self displayNextReminderMessage];
+    [reminder setOnReminderPeriodDecremented:^(Reminder *reminderArg){        
+        [self displayNextReminderMessage:reminderArg];
+    }];
+
+    [reminder setOnReminderPeriodFinished:^(Reminder *reminderArg){
+        [self displayFinishReminderMessage:reminderArg];
+    }];
+    
+    [reminder start];
+    
+    [self displayNextReminderMessage:reminder];
     NSLog(@"Started Timer...");
 }
 
-- (void)startReminder:(NSTimer*)theTimer {
-    
-    self.minutesRemainingForNextReminder --;
-    NSLog(@"minutesRemainingForNextReminder: %ld ", self.minutesRemainingForNextReminder);
-    
-    if (self.minutesRemainingForNextReminder > 0){
-        
-       [self displayNextReminderMessage];
-       return;
-    }
-    
-    self.minutesRemainingForNextReminder = [self getReminderPeriod];
-    [self displayNextReminderMessage];
-    
-   // NSDate *startDate = [[theTimer userInfo] objectForKey:@"StartDate"];
-   // NSLog(@"Notifying at %@", startDate);
-    NSString* reminderText = [reminderTextField stringValue];
-    
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Remind Me";
-    notification.informativeText = reminderText;
-    notification.soundName = NSUserNotificationDefaultSoundName;
-    notification.hasActionButton = FALSE;
-    [notification setOtherButtonTitle: @"Close"];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-}
-
 - (void) stopReminderTimer {
-    [self.repeatingTimer invalidate];
-    self.repeatingTimer = nil;
-    NSLog(@"Stopping timer.");
-}
-
-- (NSDictionary *)userInfo {
-    return @{ @"StartDate" : [NSDate date] };
+    
+    NSString *tabViewItemId = [[tabView selectedTabViewItem] identifier];
+    NSLog(@"tabViewItemId  %@ ", tabViewItemId);
+    [[reminders getReminderById:tabViewItemId] stop];    
 }
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
@@ -374,15 +352,33 @@
     [reminderMinutePeriodField setIntegerValue:minutes];
 }
 
-- (void)displayNextReminderMessage {
-    NSInteger hours = self.minutesRemainingForNextReminder / 60;
-    NSInteger minutes = self.minutesRemainingForNextReminder % 60;
+- (void)displayNextReminderMessage:(Reminder *)reminder {
+    NSInteger hours = [reminder minutesRemainingForNextReminder] / 60;
+    NSInteger minutes = [reminder minutesRemainingForNextReminder] % 60;
     
     if (hours > 0){
         [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld hr %ld min", hours, minutes]];
     } else {
         [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld min", minutes]];
     }
+}
+
+- (void)displayFinishReminderMessage:(Reminder *)reminder {
+    // TODO handle second reminder if they both finish simultaneously
+    
+    NSDate *startDate = [[[reminder repeatingTimer] userInfo] objectForKey:@"StartDate"];
+    NSLog(@"Notifying at %@", startDate);
+    
+    NSString* reminderText = [reminderTextField stringValue];
+    
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = @"Remind Me";
+    notification.informativeText = reminderText;
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    notification.hasActionButton = FALSE;
+    [notification setOtherButtonTitle: @"Close"];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 - (void) quitApplication {

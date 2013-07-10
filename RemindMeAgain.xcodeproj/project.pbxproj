@@ -17,6 +17,8 @@
 		529D0FAA16A2838300AD8301 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA216A2838300AD8301 /* MenubarController.m */; };
 		529D0FAB16A2838300AD8301 /* Panel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA416A2838300AD8301 /* Panel.m */; };
 		529D0FAC16A2838300AD8301 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FA716A2838300AD8301 /* StatusItemView.m */; };
+		52C76B69177AA6C200C2CFA1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C76B68177AA6C200C2CFA1 /* Reminder.m */; };
+		52C76B6C177AAE8600C2CFA1 /* Reminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C76B6B177AAE8600C2CFA1 /* Reminders.m */; };
 		52D4C7FC16B5FCDD00FC2774 /* HourNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4C7FB16B5FCDD00FC2774 /* HourNumberField.m */; };
 		52DB6CE816990BD300585DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
 		52DB6CF216990BD300585DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CF016990BD300585DF5 /* InfoPlist.strings */; };
@@ -58,6 +60,10 @@
 		529D0FA516A2838300AD8301 /* PanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelController.h; sourceTree = "<group>"; };
 		529D0FA616A2838300AD8301 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
 		529D0FA716A2838300AD8301 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
+		52C76B67177AA6C200C2CFA1 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		52C76B68177AA6C200C2CFA1 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
+		52C76B6A177AAE8600C2CFA1 /* Reminders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminders.h; sourceTree = "<group>"; };
+		52C76B6B177AAE8600C2CFA1 /* Reminders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminders.m; sourceTree = "<group>"; };
 		52D4C7FA16B5FCDD00FC2774 /* HourNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourNumberField.h; sourceTree = "<group>"; };
 		52D4C7FB16B5FCDD00FC2774 /* HourNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourNumberField.m; sourceTree = "<group>"; };
 		52DB6CE316990BD300585DF5 /* RemindMeAgain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMeAgain.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +235,10 @@
 				529D0FA216A2838300AD8301 /* MenubarController.m */,
 				529D0FA516A2838300AD8301 /* PanelController.h */,
 				529D0F9E16A2838300AD8301 /* PanelController.m */,
+				52C76B67177AA6C200C2CFA1 /* Reminder.h */,
+				52C76B68177AA6C200C2CFA1 /* Reminder.m */,
+				52C76B6A177AAE8600C2CFA1 /* Reminders.h */,
+				52C76B6B177AAE8600C2CFA1 /* Reminders.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -365,6 +375,8 @@
 				529D0FAC16A2838300AD8301 /* StatusItemView.m in Sources */,
 				5237D3B816A3AD2700DAC491 /* MinuteNumberField.m in Sources */,
 				52D4C7FC16B5FCDD00FC2774 /* HourNumberField.m in Sources */,
+				52C76B69177AA6C200C2CFA1 /* Reminder.m in Sources */,
+				52C76B6C177AAE8600C2CFA1 /* Reminders.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

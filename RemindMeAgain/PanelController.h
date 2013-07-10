@@ -1,6 +1,7 @@
 #import "BackgroundView.h"
 #import "StatusItemView.h"
 #import "MinuteNumberField.h"
+#import "Reminders.h"
 
 @class PanelController;
 
@@ -29,7 +30,9 @@
 
     __unsafe_unretained IBOutlet NSTextField *statusLabel;
     __unsafe_unretained IBOutlet NSButton *startStopButton;
-    __unsafe_unretained IBOutlet NSButton *quitButton;    
+    __unsafe_unretained IBOutlet NSButton *quitButton;
+    
+    Reminders *reminders;
 }
 
 @property (nonatomic, unsafe_unretained) IBOutlet BackgroundView *backgroundView;
@@ -41,10 +44,5 @@
 
 - (void)openPanel;
 - (void)closePanel;
-
-@property (weak) NSTimer *repeatingTimer;
-@property NSInteger minutesRemainingForNextReminder;
-
-- (NSDictionary *)userInfo;
 
 @end
