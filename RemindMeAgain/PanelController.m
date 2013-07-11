@@ -236,29 +236,36 @@
         // TODO init preference
     } else {
         
-        [self initFormFields:[tabViewItemId intValue]];
+        [self initFormFields: tabViewItemId];
         // Default cursor to reminder text field
         [reminderTextField selectText:self];
         [[reminderTextField currentEditor] setSelectedRange:NSMakeRange([[reminderTextField stringValue] length], 0)];
     }
 }
 
-- (void)initFormFields: (NSInteger) reminderId
+- (void)initFormFields: (NSString*) reminderId
 {
-    NSString *internalReminderId = [self getInternalReminderId:reminderId];
+    NSString *preferenceReminderId = [self getPreferenceReminderId:reminderId];
 
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSString *reminderText = [prefs stringForKey:[@"reminderText" stringByAppendingString:internalReminderId]];
+    NSString *reminderText = [prefs stringForKey:[@"reminderText" stringByAppendingString:preferenceReminderId]];
     if (reminderText == nil){
         reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
     }
     [reminderTextField setStringValue:reminderText];
     
-    NSInteger reminderPeriodInMinutes = [prefs integerForKey:[@"reminderPeriod" stringByAppendingString:internalReminderId]];
+    NSInteger reminderPeriodInMinutes = [prefs integerForKey:[@"reminderPeriod" stringByAppendingString:preferenceReminderId]];
     if (reminderPeriodInMinutes == 0){
         reminderPeriodInMinutes = 30;
     }
     [self setReminderPeriod:reminderPeriodInMinutes];
+    
+    Reminder* reminder = [reminders getReminderById:reminderId];
+    if ([reminder isRunning]){
+        [self displayReminderIsRunning];
+    } else {
+        [self displayReminderNotRunning];
+    }
 }
 
 - (void)saveReminder
@@ -270,7 +277,7 @@
         return;
     }
     
-    NSString *internalReminderId = [self getInternalReminderId:[tabViewItemId intValue]];    
+    NSString *internalReminderId = [self getPreferenceReminderId:tabViewItemId];    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:[reminderTextField stringValue] forKey:[@"reminderText" stringByAppendingString:internalReminderId]];
     [prefs setInteger:[self getReminderPeriod] forKey:[@"reminderPeriod" stringByAppendingString:internalReminderId]];
@@ -278,27 +285,35 @@
 }
 
 // For backwards compatibility until I figure out how to migrate data on application re-install
-- (NSString *)getInternalReminderId:(NSInteger)reminderId {
+- (NSString *)getPreferenceReminderId:(NSString*)reminderId {
     NSString* internalReminderId = @"";
-    if (reminderId == 2){
+    if ([reminderId isEqualToString: @"2"]){
         internalReminderId = @"_two";
     }
     return internalReminderId;
 }
 
+- (void)displayReminderIsRunning {
+    [startStopButton setTitle:@"Turn Off"];
+    [statusLabel setHidden:FALSE];      
+    [reminderMinutePeriodField setEnabled:FALSE];
+    [reminderHourPeriodField setEnabled:FALSE];
+}
+
+- (void)displayReminderNotRunning {
+    [startStopButton setTitle:@"Turn On"];
+    [statusLabel setStringValue: @" "];
+    [reminderMinutePeriodField setEnabled:TRUE];
+    [reminderHourPeriodField setEnabled:TRUE];
+}
+
 - (void) startStopReminder {
     if ([[startStopButton title] isEqualToString:@"Turn On"]){
         [self startReminderTimer];
-        [startStopButton setTitle:@"Turn Off"];
-        [statusLabel setHidden:FALSE];      
-        [reminderMinutePeriodField setEnabled:FALSE];
-        [reminderHourPeriodField setEnabled:FALSE];
+        [self displayReminderIsRunning];
     } else {
         [self stopReminderTimer];
-        [startStopButton setTitle:@"Turn On"];
-        [statusLabel setStringValue: @" "];
-        [reminderMinutePeriodField setEnabled:TRUE];
-        [reminderHourPeriodField setEnabled:TRUE];
+        [self displayReminderNotRunning];
     }
 }
 
@@ -357,9 +372,9 @@
     NSInteger minutes = [reminder minutesRemainingForNextReminder] % 60;
     
     if (hours > 0){
-        [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld hr %ld min", hours, minutes]];
+        [statusLabel setStringValue: [NSString stringWithFormat:@"%@ Reminder - Next reminder in %ld hr %ld min", reminder.description,hours, minutes]];
     } else {
-        [statusLabel setStringValue: [NSString stringWithFormat:@"Next reminder in %ld min", minutes]];
+        [statusLabel setStringValue: [NSString stringWithFormat:@"%@ Reminder - Next reminder in %ld min", reminder.description, minutes]];
     }
 }
 

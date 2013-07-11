@@ -10,13 +10,22 @@
 
 @implementation Reminder
 
+- (id)initWithReminderId:(NSString *)value
+{
+    self = [super init];
+    if (self) {
+        _description = value;
+    }
+    return self;
+}
+
 - (void) start
 {
     // Cancel any preexisting timer
     [self.repeatingTimer invalidate];
     
     self.minutesRemainingForNextReminder = self.reminderPeriod;
-    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 60 /* TODO always set this back to 60 seconds before checking-in */
+    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 2 /* TODO always set this back to 60 seconds before checking-in */
                                                            target:self selector:@selector(startReminder:)
                                                          userInfo:[self userInfo] repeats:YES];
 }
@@ -45,6 +54,11 @@
     self.onReminderPeriodDecremented(self);
     self.onReminderPeriodFinished(self);
     self.minutesRemainingForNextReminder = self.reminderPeriod;
+}
+
+- (BOOL) isRunning
+{
+   return [self.repeatingTimer isValid];
 }
 
 - (NSDictionary *)userInfo
