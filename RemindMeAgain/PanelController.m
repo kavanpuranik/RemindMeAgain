@@ -47,9 +47,9 @@
     [panel setBackgroundColor:[NSColor clearColor]];
     
     // Resize panel
-    NSRect panelRect = [[self window] frame];
-    panelRect.size.height = POPUP_HEIGHT;
-    [[self window] setFrame:panelRect display:NO];
+    //NSRect panelRect = [[self window] frame];
+    //panelRect.size.height = POPUP_HEIGHT;
+    //[[self window] setFrame:panelRect display:NO];
     
     // Tab selection
     [tabView setDelegate: self];
@@ -372,9 +372,9 @@
     NSInteger minutes = [reminder minutesRemainingForNextReminder] % 60;
     
     if (hours > 0){
-        [statusLabel setStringValue: [NSString stringWithFormat:@"%@ Reminder - Next reminder in %ld hr %ld min", reminder.description,hours, minutes]];
+        [statusLabel setStringValue: [NSString stringWithFormat:@"%ld:%ld", hours, minutes]];
     } else {
-        [statusLabel setStringValue: [NSString stringWithFormat:@"%@ Reminder - Next reminder in %ld min", reminder.description, minutes]];
+        [statusLabel setStringValue: [NSString stringWithFormat:@"00:%ld", minutes]];
     }
 }
 
