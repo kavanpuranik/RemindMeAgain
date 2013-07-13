@@ -10,11 +10,12 @@
 
 @implementation Reminder
 
-- (id)initWithReminderId:(NSString *)value
+- (id)initWithReminderId:(NSString*) reminderId withDescription:(NSString*) description
 {
     self = [super init];
     if (self) {
-        _description = value;
+        _description = description;
+        _reminderId = reminderId;
     }
     return self;
 }

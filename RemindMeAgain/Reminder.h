@@ -10,12 +10,13 @@
 
 @interface Reminder : NSObject
 
+@property NSString *reminderId;
 @property NSString *description;
 @property (weak) NSTimer *repeatingTimer;
 @property NSInteger minutesRemainingForNextReminder;
 @property NSInteger reminderPeriod;
 
-- (id) initWithReminderId: (NSString*) reminderId;
+- (id)initWithReminderId:(NSString*) reminderId withDescription:(NSString*) description;
 
 #pragma mark - Callbacks
 @property (copy) void (^onReminderPeriodDecremented)(Reminder *reminder);

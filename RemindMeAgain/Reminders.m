@@ -21,8 +21,8 @@
 
 - (void) initReminderMap
 {
-    Reminder* reminderOne = [[Reminder alloc] initWithReminderId:@"Primary"];
-    Reminder* reminderTwo = [[Reminder alloc] initWithReminderId:@"Secondary"];
+    Reminder* reminderOne = [[Reminder alloc] initWithReminderId:@"1" withDescription:@"Primary"];
+    Reminder* reminderTwo = [[Reminder alloc] initWithReminderId:@"2" withDescription:@"Secondary"];
     
     remindersMap = [[NSDictionary alloc] initWithObjectsAndKeys:
                     reminderOne, @"1",

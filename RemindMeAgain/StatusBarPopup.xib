@@ -150,7 +150,7 @@
 												<int key="NSCellFlags2">138413056</int>
 												<string key="NSContents"/>
 												<reference key="NSSupport" ref="928619357"/>
-												<string key="NSPlaceholderString">St#1</string>
+												<string key="NSPlaceholderString"/>
 												<string key="NSCellIdentifier">_NS:1535</string>
 												<reference key="NSControlView" ref="663850403"/>
 												<reference key="NSBackgroundColor" ref="236050561"/>
@@ -225,7 +225,7 @@
 												<int key="NSCellFlags2">138413056</int>
 												<string key="NSContents"/>
 												<reference key="NSSupport" ref="928619357"/>
-												<string key="NSPlaceholderString">St#2</string>
+												<string key="NSPlaceholderString"/>
 												<string key="NSCellIdentifier">_NS:1535</string>
 												<reference key="NSControlView" ref="190699945"/>
 												<reference key="NSBackgroundColor" ref="236050561"/>
@@ -609,11 +609,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">statusLabel</string>
+						<string key="label">statusLabelOne</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="663850403"/>
 					</object>
-					<int key="connectionID">64</int>
+					<int key="connectionID">142</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">statusLabelTwo</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="190699945"/>
+					</object>
+					<int key="connectionID">143</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1046,7 +1054,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">141</int>
+			<int key="maxID">143</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

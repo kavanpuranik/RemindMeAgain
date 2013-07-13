@@ -28,7 +28,9 @@
     __unsafe_unretained IBOutlet MinuteNumberField *reminderMinutePeriodField;
     __unsafe_unretained IBOutlet MinuteNumberField *reminderHourPeriodField;
 
-    __unsafe_unretained IBOutlet NSTextField *statusLabel;
+    __unsafe_unretained IBOutlet NSTextField *statusLabelOne;
+    __unsafe_unretained IBOutlet NSTextField *statusLabelTwo;
+    
     __unsafe_unretained IBOutlet NSButton *startStopButton;
     __unsafe_unretained IBOutlet NSButton *quitButton;
     

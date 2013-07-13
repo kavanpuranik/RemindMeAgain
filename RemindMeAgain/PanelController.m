@@ -57,9 +57,8 @@
     NSTabViewItem *secondTabView = [self->tabView tabViewItemAtIndex:1];
     [secondTabView setView: [firstTabView view]];
     
-    [startStopButton setAction:@selector(startStopReminder)];
+    [startStopButton setAction:@selector(startStopReminderInActiveTab)];
     [quitButton setAction:@selector(quitApplication)];    
-    [statusLabel setHidden:TRUE];
 }
 
 #pragma mark - Public accessors
@@ -243,15 +242,21 @@
     }
 }
 
+- (NSString *)getReminderTextByPreferenceReminderId:(NSString *)preferenceReminderId preferences:(NSUserDefaults *)preferences
+{
+    NSString *reminderText = [preferences stringForKey:[@"reminderText" stringByAppendingString:preferenceReminderId]];
+    if (reminderText == nil){
+        reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
+    }
+    return reminderText;
+}
+
 - (void)initFormFields: (NSString*) reminderId
 {
     NSString *preferenceReminderId = [self getPreferenceReminderId:reminderId];
 
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSString *reminderText = [prefs stringForKey:[@"reminderText" stringByAppendingString:preferenceReminderId]];
-    if (reminderText == nil){
-        reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
-    }
+    NSUserDefaults *prefs = [self loadPreferences];
+    NSString *reminderText = [self getReminderTextByPreferenceReminderId:preferenceReminderId preferences:prefs];
     [reminderTextField setStringValue:reminderText];
     
     NSInteger reminderPeriodInMinutes = [prefs integerForKey:[@"reminderPeriod" stringByAppendingString:preferenceReminderId]];
@@ -260,17 +265,28 @@
     }
     [self setReminderPeriod:reminderPeriodInMinutes];
     
-    Reminder* reminder = [reminders getReminderById:reminderId];
+    Reminder *reminder = [reminders getReminderById:reminderId];
     if ([reminder isRunning]){
-        [self displayReminderIsRunning];
+        [self displayReminderIsRunning:reminderId];
     } else {
-        [self displayReminderNotRunning];
+        [self displayReminderNotRunning:reminderId];
     }
 }
 
-- (void)saveReminder
+- (NSUserDefaults *)loadPreferences
 {
-    NSString *tabViewItemId = [[tabView selectedTabViewItem] identifier];    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    return prefs;
+}
+
+- (NSString *)getReminderIdOfCurrentTab
+{
+    return [[tabView selectedTabViewItem] identifier];
+}
+
+- (void) saveReminder
+{
+    NSString* tabViewItemId = [self getReminderIdOfCurrentTab];    
     NSLog(@"tabViewItemId  %@ ", tabViewItemId);
     
     if ([tabViewItemId isEqualToString: @"preferences_tab"]){
@@ -285,7 +301,8 @@
 }
 
 // For backwards compatibility until I figure out how to migrate data on application re-install
-- (NSString *)getPreferenceReminderId:(NSString*)reminderId {
+- (NSString *)getPreferenceReminderId:(NSString*)reminderId
+{
     NSString* internalReminderId = @"";
     if ([reminderId isEqualToString: @"2"]){
         internalReminderId = @"_two";
@@ -293,27 +310,39 @@
     return internalReminderId;
 }
 
-- (void)displayReminderIsRunning {
+- (void)displayReminderIsRunning:(NSString*)reminderId
+{
     [startStopButton setTitle:@"Turn Off"];
-    [statusLabel setHidden:FALSE];      
+    [[self getStatusLabelByReminderId:reminderId] setHidden:FALSE];
     [reminderMinutePeriodField setEnabled:FALSE];
     [reminderHourPeriodField setEnabled:FALSE];
 }
 
-- (void)displayReminderNotRunning {
+- (void)displayReminderNotRunning:(NSString*)reminderId
+{
     [startStopButton setTitle:@"Turn On"];
-    [statusLabel setStringValue: @" "];
+    [[self getStatusLabelByReminderId:reminderId] setStringValue: @" "];
     [reminderMinutePeriodField setEnabled:TRUE];
     [reminderHourPeriodField setEnabled:TRUE];
 }
 
-- (void) startStopReminder {
+- (NSTextField*) getStatusLabelByReminderId:(NSString*)reminderId
+{
+    if ([reminderId isEqualToString: @"1"]){
+        return statusLabelOne;
+    }
+    
+    return statusLabelTwo;
+}
+
+- (void) startStopReminderInActiveTab {
     if ([[startStopButton title] isEqualToString:@"Turn On"]){
+        [self saveReminder];
         [self startReminderTimer];
-        [self displayReminderIsRunning];
+        [self displayReminderIsRunning:[self getReminderIdOfCurrentTab]];
     } else {
         [self stopReminderTimer];
-        [self displayReminderNotRunning];
+        [self displayReminderNotRunning:[self getReminderIdOfCurrentTab]];
     }
 }
 
@@ -346,12 +375,12 @@
     [[reminders getReminderById:tabViewItemId] stop];    
 }
 
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+- (BOOL) userNotificationCenter:(NSUserNotificationCenter *)center
      shouldPresentNotification:(NSUserNotification *)notification{
     return YES;
 }
 
-- (NSInteger)getReminderPeriod {
+- (NSInteger) getReminderPeriod {
     NSInteger minutes = [reminderMinutePeriodField integerValue];
     NSInteger hours = [reminderHourPeriodField integerValue];
     minutes = hours * 60 + minutes;
@@ -367,24 +396,19 @@
     [reminderMinutePeriodField setIntegerValue:minutes];
 }
 
-- (void)displayNextReminderMessage:(Reminder *)reminder {
+- (void) displayNextReminderMessage:(Reminder *)reminder {
     NSInteger hours = [reminder minutesRemainingForNextReminder] / 60;
     NSInteger minutes = [reminder minutesRemainingForNextReminder] % 60;
     
-    if (hours > 0){
-        [statusLabel setStringValue: [NSString stringWithFormat:@"%ld:%ld", hours, minutes]];
-    } else {
-        [statusLabel setStringValue: [NSString stringWithFormat:@"00:%ld", minutes]];
-    }
+    [[self getStatusLabelByReminderId:[reminder reminderId]]
+                                setStringValue:[NSString stringWithFormat:@"%02ld:%02ld", hours, minutes]];
 }
 
-- (void)displayFinishReminderMessage:(Reminder *)reminder {
-    // TODO handle second reminder if they both finish simultaneously
-    
+- (void) displayFinishReminderMessage:(Reminder *)reminder {    
     NSDate *startDate = [[[reminder repeatingTimer] userInfo] objectForKey:@"StartDate"];
     NSLog(@"Notifying at %@", startDate);
     
-    NSString* reminderText = [reminderTextField stringValue];
+    NSString* reminderText = [self getReminderTextByPreferenceReminderId:[self getPreferenceReminderId:[reminder reminderId]] preferences:[self loadPreferences]];
     
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = @"Remind Me";
