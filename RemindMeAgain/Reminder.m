@@ -26,8 +26,8 @@
     [self.repeatingTimer invalidate];
     
     self.minutesRemainingForNextReminder = self.reminderPeriod;
-    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 2 /* TODO always set this back to 60 seconds before checking-in */
-                                                           target:self selector:@selector(startReminder:)
+    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 4 /* TODO always set this back to 60 seconds before checking-in */
+                                                           target:self selector:@selector(trackReminder:)
                                                          userInfo:[self userInfo] repeats:YES];
 }
 
@@ -41,20 +41,29 @@
     }
 }
 
-- (void)startReminder:(NSTimer*)theTimer
+- (void)trackReminder:(NSTimer*)theTimer
 {    
     self.minutesRemainingForNextReminder --;
     NSLog(@"minutesRemainingForNextReminder: %ld ", self.minutesRemainingForNextReminder);
     
     if (self.minutesRemainingForNextReminder > 0)
     {
-        self.onReminderPeriodDecremented(self);
+        self.onReminderPeriodUpdated(self);
         return;
     }
     
-    self.onReminderPeriodDecremented(self);
+    self.onReminderPeriodUpdated(self);
     self.onReminderPeriodFinished(self);
     self.minutesRemainingForNextReminder = self.reminderPeriod;
+    
+    [NSTimer scheduledTimerWithTimeInterval: 2
+                                     target:self selector:@selector(startReminder:)
+                                   userInfo:[self userInfo] repeats:NO];
+}
+
+- (void)startReminder:(NSTimer*)theTimer
+{
+    self.onReminderPeriodUpdated(self);
 }
 
 - (BOOL) isRunning

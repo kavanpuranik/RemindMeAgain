@@ -35,4 +35,9 @@
     return [remindersMap objectForKey:reminderId];
 }
 
+-(NSArray*) getAllReminders
+{
+    return [remindersMap allValues];
+}
+
 @end

@@ -16,4 +16,6 @@
 
 - (Reminder*) getReminderById:(NSString*)reminderId;
 
+-(NSArray*) getAllReminders;
+
 @end

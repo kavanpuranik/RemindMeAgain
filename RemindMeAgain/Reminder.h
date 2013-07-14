@@ -19,7 +19,7 @@
 - (id)initWithReminderId:(NSString*) reminderId withDescription:(NSString*) description;
 
 #pragma mark - Callbacks
-@property (copy) void (^onReminderPeriodDecremented)(Reminder *reminder);
+@property (copy) void (^onReminderPeriodUpdated)(Reminder *reminder);
 @property (copy) void (^onReminderPeriodFinished)(Reminder *reminder);
 
 - (void) start;

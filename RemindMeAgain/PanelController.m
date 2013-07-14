@@ -265,11 +265,12 @@
     }
     [self setReminderPeriod:reminderPeriodInMinutes];
     
-    Reminder *reminder = [reminders getReminderById:reminderId];
-    if ([reminder isRunning]){
-        [self displayReminderIsRunning:reminderId];
-    } else {
-        [self displayReminderNotRunning:reminderId];
+    for (Reminder *reminder in [reminders getAllReminders]){
+        if ([reminder isRunning]){
+            [self displayReminderIsRunning:[reminder reminderId]];
+        } else {
+            [self displayReminderNotRunning:[reminder reminderId]];
+        }
     }
 }
 
@@ -314,6 +315,7 @@
 {
     [startStopButton setTitle:@"Turn Off"];
     [[self getStatusLabelByReminderId:reminderId] setHidden:FALSE];
+    [[[[self getStatusLabelByReminderId:reminderId] superview] superview] setHidden:FALSE];
     [reminderMinutePeriodField setEnabled:FALSE];
     [reminderHourPeriodField setEnabled:FALSE];
 }
@@ -322,6 +324,7 @@
 {
     [startStopButton setTitle:@"Turn On"];
     [[self getStatusLabelByReminderId:reminderId] setStringValue: @""];
+    [[[[self getStatusLabelByReminderId:reminderId] superview] superview] setHidden:TRUE];
     [reminderMinutePeriodField setEnabled:TRUE];
     [reminderHourPeriodField setEnabled:TRUE];
 }
@@ -354,7 +357,7 @@
     Reminder* reminder = [reminders getReminderById:tabViewItemId];
     [reminder setReminderPeriod: [self getReminderPeriod]];
     
-    [reminder setOnReminderPeriodDecremented:^(Reminder *reminderArg){        
+    [reminder setOnReminderPeriodUpdated:^(Reminder *reminderArg){        
         [self displayNextReminderMessage:reminderArg];
     }];
 
@@ -404,14 +407,14 @@
                                 setStringValue:[NSString stringWithFormat:@"%02ld:%02ld", hours, minutes]];
 }
 
-- (void) displayFinishReminderMessage:(Reminder *)reminder {    
-    NSDate *startDate = [[[reminder repeatingTimer] userInfo] objectForKey:@"StartDate"];
-    NSLog(@"Notifying at %@", startDate);
+- (void) displayFinishReminderMessage:(Reminder *)reminder {
+    // save first so that the notification has the latest reminder text
+    [self saveReminder];
     
     NSString* reminderText = [self getReminderTextByPreferenceReminderId:[self getPreferenceReminderId:[reminder reminderId]] preferences:[self loadPreferences]];
     
     NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Remind Me";
+    notification.title = @"Remind Me Again";
     notification.informativeText = reminderText;
     notification.soundName = NSUserNotificationDefaultSoundName;
     notification.hasActionButton = FALSE;
