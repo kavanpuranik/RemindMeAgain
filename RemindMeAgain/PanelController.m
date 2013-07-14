@@ -321,7 +321,7 @@
 - (void)displayReminderNotRunning:(NSString*)reminderId
 {
     [startStopButton setTitle:@"Turn On"];
-    [[self getStatusLabelByReminderId:reminderId] setStringValue: @" "];
+    [[self getStatusLabelByReminderId:reminderId] setStringValue: @""];
     [reminderMinutePeriodField setEnabled:TRUE];
     [reminderHourPeriodField setEnabled:TRUE];
 }
