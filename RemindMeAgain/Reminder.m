@@ -26,7 +26,7 @@
     [self.repeatingTimer invalidate];
     
     self.minutesRemainingForNextReminder = self.reminderPeriod;
-    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 4 /* TODO always set this back to 60 seconds before checking-in */
+    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval: 60 /* TODO always set this back to 60 seconds before checking-in */
                                                            target:self selector:@selector(trackReminder:)
                                                          userInfo:[self userInfo] repeats:YES];
 }

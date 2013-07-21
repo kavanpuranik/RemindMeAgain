@@ -58,7 +58,7 @@
     [secondTabView setView: [firstTabView view]];
     
     [startStopButton setAction:@selector(startStopReminderInActiveTab)];
-    [quitButton setAction:@selector(quitApplication)];    
+    [quitButton setAction:@selector(quitApplication)];
 }
 
 #pragma mark - Public accessors
@@ -245,7 +245,7 @@
 - (NSString *)getReminderTextByPreferenceReminderId:(NSString *)preferenceReminderId preferences:(NSUserDefaults *)preferences
 {
     NSString *reminderText = [preferences stringForKey:[@"reminderText" stringByAppendingString:preferenceReminderId]];
-    if (reminderText == nil){
+    if ([reminderText length] == 0){
         reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
     }
     return reminderText;
@@ -272,6 +272,7 @@
             [self displayReminderNotRunning:[reminder reminderId]];
         }
     }
+    
 }
 
 - (NSUserDefaults *)loadPreferences
@@ -313,20 +314,26 @@
 
 - (void)displayReminderIsRunning:(NSString*)reminderId
 {
-    [startStopButton setTitle:@"Turn Off"];
     [[self getStatusLabelByReminderId:reminderId] setHidden:FALSE];
     [[[[self getStatusLabelByReminderId:reminderId] superview] superview] setHidden:FALSE];
-    [reminderMinutePeriodField setEnabled:FALSE];
-    [reminderHourPeriodField setEnabled:FALSE];
+    
+    if ([reminderId isEqualToString:[self getReminderIdOfCurrentTab]]){
+        [startStopButton setTitle:@"Turn Off"];
+        [reminderMinutePeriodField setEnabled:FALSE];
+        [reminderHourPeriodField setEnabled:FALSE];
+    }
 }
 
 - (void)displayReminderNotRunning:(NSString*)reminderId
 {
-    [startStopButton setTitle:@"Turn On"];
     [[self getStatusLabelByReminderId:reminderId] setStringValue: @""];
     [[[[self getStatusLabelByReminderId:reminderId] superview] superview] setHidden:TRUE];
-    [reminderMinutePeriodField setEnabled:TRUE];
-    [reminderHourPeriodField setEnabled:TRUE];
+
+    if ([reminderId isEqualToString:[self getReminderIdOfCurrentTab]]){
+        [startStopButton setTitle:@"Turn On"];
+        [reminderMinutePeriodField setEnabled:TRUE];
+        [reminderHourPeriodField setEnabled:TRUE];
+    }
 }
 
 - (NSTextField*) getStatusLabelByReminderId:(NSString*)reminderId
