@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'RemindMeAgainLoginHelperApp' target in the 'RemindMeAgainLoginHelperApp' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

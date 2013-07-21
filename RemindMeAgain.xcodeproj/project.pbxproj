@@ -10,6 +10,18 @@
 		520E2DE816D2A5B000BEE861 /* icon_16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 520E2DE716D2A5B000BEE861 /* icon_16x16.png */; };
 		522ECB9316A2428800277E29 /* StatusBarPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522ECB9216A2428800277E29 /* StatusBarPopup.xib */; };
 		5237D3B816A3AD2700DAC491 /* MinuteNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */; };
+		52429D9E179C8E1700BC6A6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
+		52429DA4179C8E1700BC6A6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52429DA2179C8E1700BC6A6A /* InfoPlist.strings */; };
+		52429DA6179C8E1700BC6A6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52429DA5179C8E1700BC6A6A /* main.m */; };
+		52429DAA179C8E1700BC6A6A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 52429DA8179C8E1700BC6A6A /* Credits.rtf */; };
+		52429DAD179C8E1700BC6A6A /* RMAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52429DAC179C8E1700BC6A6A /* RMAAppDelegate.m */; };
+		52429DB0179C8E1700BC6A6A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52429DAE179C8E1700BC6A6A /* MainMenu.xib */; };
+		52429DB7179C8E1800BC6A6A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6D0516990BD400585DF5 /* SenTestingKit.framework */; };
+		52429DB8179C8E1800BC6A6A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
+		52429DC0179C8E1800BC6A6A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52429DBE179C8E1800BC6A6A /* InfoPlist.strings */; };
+		52429DC3179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52429DC2179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.m */; };
+		52429DCE179C8FC600BC6A6A /* RemindMeAgainLoginHelperApp.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52429D9D179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp.app */; };
+		52429DD1179C9A7800BC6A6A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52429DCF179C97AD00BC6A6A /* ServiceManagement.framework */; };
 		527CB29D16D1BDEA006C88F3 /* RemindMeAgain.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */; };
 		5295925C16D2B243003C3A5E /* icon_16x16_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5295925B16D2B243003C3A5E /* icon_16x16_highlighted.png */; };
 		529D0FA816A2838300AD8301 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0F9E16A2838300AD8301 /* PanelController.m */; };
@@ -33,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		52429DB9179C8E1800BC6A6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52DB6CDA16990BD300585DF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52429D9C179C8E1700BC6A6A;
+			remoteInfo = RemindMeAgainLoginHelperApp;
+		};
 		52DB6D0816990BD400585DF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52DB6CDA16990BD300585DF5 /* Project object */;
@@ -42,12 +61,41 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		52429DCD179C8FB700BC6A6A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				52429DCE179C8FC600BC6A6A /* RemindMeAgainLoginHelperApp.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		520E2DE716D2A5B000BEE861 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
 		521D272016D2CF9700F40A82 /* RemindMeAgain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RemindMeAgain.entitlements; sourceTree = "<group>"; };
 		522ECB9216A2428800277E29 /* StatusBarPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarPopup.xib; sourceTree = "<group>"; };
 		5237D3B516A3ACD000DAC491 /* MinuteNumberField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinuteNumberField.h; sourceTree = "<group>"; };
 		5237D3B716A3AD2700DAC491 /* MinuteNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MinuteNumberField.m; sourceTree = "<group>"; };
+		52429D9D179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMeAgainLoginHelperApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52429DA1179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RemindMeAgainLoginHelperApp-Info.plist"; sourceTree = "<group>"; };
+		52429DA3179C8E1700BC6A6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52429DA5179C8E1700BC6A6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		52429DA7179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RemindMeAgainLoginHelperApp-Prefix.pch"; sourceTree = "<group>"; };
+		52429DA9179C8E1700BC6A6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		52429DAB179C8E1700BC6A6A /* RMAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMAAppDelegate.h; sourceTree = "<group>"; };
+		52429DAC179C8E1700BC6A6A /* RMAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMAAppDelegate.m; sourceTree = "<group>"; };
+		52429DAF179C8E1700BC6A6A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		52429DB6179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindMeAgainLoginHelperAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52429DBD179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RemindMeAgainLoginHelperAppTests-Info.plist"; sourceTree = "<group>"; };
+		52429DBF179C8E1800BC6A6A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		52429DC1179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemindMeAgainLoginHelperAppTests.h; sourceTree = "<group>"; };
+		52429DC2179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemindMeAgainLoginHelperAppTests.m; sourceTree = "<group>"; };
+		52429DCA179C8E3F00BC6A6A /* RemindMeAgainLoginHelperApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RemindMeAgainLoginHelperApp.entitlements; sourceTree = "<group>"; };
+		52429DCF179C97AD00BC6A6A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = RemindMeAgain.iconset; sourceTree = "<group>"; };
 		5295925B16D2B243003C3A5E /* icon_16x16_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16_highlighted.png; sourceTree = "<group>"; };
 		529D0F9E16A2838300AD8301 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
@@ -88,10 +136,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		52429D9A179C8E1700BC6A6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52429D9E179C8E1700BC6A6A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52429DB2179C8E1800BC6A6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52429DB7179C8E1800BC6A6A /* SenTestingKit.framework in Frameworks */,
+				52429DB8179C8E1800BC6A6A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52DB6CE016990BD300585DF5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52429DD1179C9A7800BC6A6A /* ServiceManagement.framework in Frameworks */,
 				52DB6CE816990BD300585DF5 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,13 +192,59 @@
 			name = Graphics;
 			sourceTree = "<group>";
 		};
+		52429D9F179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp */ = {
+			isa = PBXGroup;
+			children = (
+				52429DCA179C8E3F00BC6A6A /* RemindMeAgainLoginHelperApp.entitlements */,
+				52429DAB179C8E1700BC6A6A /* RMAAppDelegate.h */,
+				52429DAC179C8E1700BC6A6A /* RMAAppDelegate.m */,
+				52429DAE179C8E1700BC6A6A /* MainMenu.xib */,
+				52429DA0179C8E1700BC6A6A /* Supporting Files */,
+			);
+			path = RemindMeAgainLoginHelperApp;
+			sourceTree = "<group>";
+		};
+		52429DA0179C8E1700BC6A6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52429DA1179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp-Info.plist */,
+				52429DA2179C8E1700BC6A6A /* InfoPlist.strings */,
+				52429DA5179C8E1700BC6A6A /* main.m */,
+				52429DA7179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp-Prefix.pch */,
+				52429DA8179C8E1700BC6A6A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52429DBB179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				52429DC1179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.h */,
+				52429DC2179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.m */,
+				52429DBC179C8E1800BC6A6A /* Supporting Files */,
+			);
+			path = RemindMeAgainLoginHelperAppTests;
+			sourceTree = "<group>";
+		};
+		52429DBC179C8E1800BC6A6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52429DBD179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests-Info.plist */,
+				52429DBE179C8E1800BC6A6A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		52DB6CD816990BD300585DF5 = {
 			isa = PBXGroup;
 			children = (
+				52429DCF179C97AD00BC6A6A /* ServiceManagement.framework */,
 				527CB29C16D1BDEA006C88F3 /* RemindMeAgain.iconset */,
 				5223B6BC16A259B00095BA91 /* User Interface */,
 				52DB6CED16990BD300585DF5 /* RemindMeAgain */,
 				52DB6D0A16990BD400585DF5 /* RemindMeAgainTests */,
+				52429D9F179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp */,
+				52429DBB179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests */,
 				52DB6CE616990BD300585DF5 /* Frameworks */,
 				52DB6CE416990BD300585DF5 /* Products */,
 			);
@@ -143,6 +255,8 @@
 			children = (
 				52DB6CE316990BD300585DF5 /* RemindMeAgain.app */,
 				52DB6D0416990BD400585DF5 /* RemindMeAgainTests.octest */,
+				52429D9D179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp.app */,
+				52429DB6179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +370,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		52429D9C179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52429DC8179C8E1800BC6A6A /* Build configuration list for PBXNativeTarget "RemindMeAgainLoginHelperApp" */;
+			buildPhases = (
+				52429D99179C8E1700BC6A6A /* Sources */,
+				52429D9A179C8E1700BC6A6A /* Frameworks */,
+				52429D9B179C8E1700BC6A6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemindMeAgainLoginHelperApp;
+			productName = RemindMeAgainLoginHelperApp;
+			productReference = 52429D9D179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52429DB5179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52429DC9179C8E1800BC6A6A /* Build configuration list for PBXNativeTarget "RemindMeAgainLoginHelperAppTests" */;
+			buildPhases = (
+				52429DB1179C8E1800BC6A6A /* Sources */,
+				52429DB2179C8E1800BC6A6A /* Frameworks */,
+				52429DB3179C8E1800BC6A6A /* Resources */,
+				52429DB4179C8E1800BC6A6A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52429DBA179C8E1800BC6A6A /* PBXTargetDependency */,
+			);
+			name = RemindMeAgainLoginHelperAppTests;
+			productName = RemindMeAgainLoginHelperAppTests;
+			productReference = 52429DB6179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		52DB6CE216990BD300585DF5 /* RemindMeAgain */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52DB6D1516990BD400585DF5 /* Build configuration list for PBXNativeTarget "RemindMeAgain" */;
@@ -263,6 +413,7 @@
 				52DB6CDF16990BD300585DF5 /* Sources */,
 				52DB6CE016990BD300585DF5 /* Frameworks */,
 				52DB6CE116990BD300585DF5 /* Resources */,
+				52429DCD179C8FB700BC6A6A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -316,11 +467,31 @@
 			targets = (
 				52DB6CE216990BD300585DF5 /* RemindMeAgain */,
 				52DB6D0316990BD400585DF5 /* RemindMeAgainTests */,
+				52429D9C179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp */,
+				52429DB5179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		52429D9B179C8E1700BC6A6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52429DA4179C8E1700BC6A6A /* InfoPlist.strings in Resources */,
+				52429DAA179C8E1700BC6A6A /* Credits.rtf in Resources */,
+				52429DB0179C8E1700BC6A6A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52429DB3179C8E1800BC6A6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52429DC0179C8E1800BC6A6A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52DB6CE116990BD300585DF5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,6 +517,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		52429DB4179C8E1800BC6A6A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		52DB6D0216990BD400585DF5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -362,6 +546,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		52429D99179C8E1700BC6A6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52429DA6179C8E1700BC6A6A /* main.m in Sources */,
+				52429DAD179C8E1700BC6A6A /* RMAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52429DB1179C8E1800BC6A6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52429DC3179C8E1800BC6A6A /* RemindMeAgainLoginHelperAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		52DB6CDF16990BD300585DF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +592,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		52429DBA179C8E1800BC6A6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52429D9C179C8E1700BC6A6A /* RemindMeAgainLoginHelperApp */;
+			targetProxy = 52429DB9179C8E1800BC6A6A /* PBXContainerItemProxy */;
+		};
 		52DB6D0916990BD400585DF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 52DB6CE216990BD300585DF5 /* RemindMeAgain */;
@@ -399,6 +605,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		52429DA2179C8E1700BC6A6A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52429DA3179C8E1700BC6A6A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		52429DA8179C8E1700BC6A6A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52429DA9179C8E1700BC6A6A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		52429DAE179C8E1700BC6A6A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52429DAF179C8E1700BC6A6A /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		52429DBE179C8E1800BC6A6A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52429DBF179C8E1800BC6A6A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		52DB6CF016990BD300585DF5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,6 +672,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		52429DC4179C8E1800BC6A6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CODE_SIGN_ENTITLEMENTS = RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp-Prefix.pch";
+				INFOPLIST_FILE = "RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		52429DC5179C8E1800BC6A6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CODE_SIGN_ENTITLEMENTS = RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp-Prefix.pch";
+				INFOPLIST_FILE = "RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		52429DC6179C8E1800BC6A6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RemindMeAgainLoginHelperApp.app/Contents/MacOS/RemindMeAgainLoginHelperApp";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp-Prefix.pch";
+				INFOPLIST_FILE = "RemindMeAgainLoginHelperAppTests/RemindMeAgainLoginHelperAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		52429DC7179C8E1800BC6A6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RemindMeAgainLoginHelperApp.app/Contents/MacOS/RemindMeAgainLoginHelperApp";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemindMeAgainLoginHelperApp/RemindMeAgainLoginHelperApp-Prefix.pch";
+				INFOPLIST_FILE = "RemindMeAgainLoginHelperAppTests/RemindMeAgainLoginHelperAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		52DB6D1316990BD400585DF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -461,6 +771,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -484,6 +795,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
@@ -497,6 +809,7 @@
 				GCC_PREFIX_HEADER = "RemindMeAgain/RemindMeAgain-Prefix.pch";
 				INFOPLIST_FILE = "RemindMeAgain/RemindMeAgain-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -507,10 +820,12 @@
 				CODE_SIGN_ENTITLEMENTS = RemindMeAgain/RemindMeAgain.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RemindMeAgain/RemindMeAgain-Prefix.pch";
 				INFOPLIST_FILE = "RemindMeAgain/RemindMeAgain-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -548,6 +863,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		52429DC8179C8E1800BC6A6A /* Build configuration list for PBXNativeTarget "RemindMeAgainLoginHelperApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52429DC4179C8E1800BC6A6A /* Debug */,
+				52429DC5179C8E1800BC6A6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52429DC9179C8E1800BC6A6A /* Build configuration list for PBXNativeTarget "RemindMeAgainLoginHelperAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52429DC6179C8E1800BC6A6A /* Debug */,
+				52429DC7179C8E1800BC6A6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		52DB6CDD16990BD300585DF5 /* Build configuration list for PBXProject "RemindMeAgain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

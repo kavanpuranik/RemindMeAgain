@@ -2,6 +2,8 @@
 #import "StatusItemView.h"
 #import "MinuteNumberField.h"
 #import "Reminders.h"
+#import <ServiceManagement/ServiceManagement.h>
+#import <ServiceManagement/SMLoginItem.h>
 
 @class PanelController;
 
@@ -33,6 +35,8 @@
     
     __unsafe_unretained IBOutlet NSButton *startStopButton;
     __unsafe_unretained IBOutlet NSButton *quitButton;
+    
+    __unsafe_unretained IBOutlet NSButton *loginStartupPreferenceButton;
     
     Reminders *reminders;
 }
