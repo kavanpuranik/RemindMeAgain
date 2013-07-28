@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Reminder.h"
+#import <ServiceManagement/ServiceManagement.h>
+#import <ServiceManagement/SMLoginItem.h>
 
 @interface Reminders : NSObject {
     
@@ -16,6 +18,6 @@
 
 - (Reminder*) getReminderById:(NSString*)reminderId;
 
--(NSArray*) getAllReminders;
+- (NSArray*) getAllReminders;
 
 @end

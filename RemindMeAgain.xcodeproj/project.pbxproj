@@ -41,6 +41,7 @@
 		52DB6D0716990BD400585DF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB6CE716990BD300585DF5 /* Cocoa.framework */; };
 		52DB6D0F16990BD400585DF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6D0D16990BD400585DF5 /* InfoPlist.strings */; };
 		52DB6D1216990BD400585DF5 /* RemindMeAgainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DB6D1116990BD400585DF5 /* RemindMeAgainTests.m */; };
+		52EED4CC17A4DC74005FFC0F /* LoginStartupDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52EED4CB17A4DC74005FFC0F /* LoginStartupDelegate.m */; };
 		52FCCE0216A35C4100427E6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DB6CFC16990BD400585DF5 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		52DB6D0E16990BD400585DF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		52DB6D1016990BD400585DF5 /* RemindMeAgainTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemindMeAgainTests.h; sourceTree = "<group>"; };
 		52DB6D1116990BD400585DF5 /* RemindMeAgainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemindMeAgainTests.m; sourceTree = "<group>"; };
+		52EED4CA17A4DC74005FFC0F /* LoginStartupDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginStartupDelegate.h; sourceTree = "<group>"; };
+		52EED4CB17A4DC74005FFC0F /* LoginStartupDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginStartupDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +290,7 @@
 				521D272016D2CF9700F40A82 /* RemindMeAgain.entitlements */,
 				52FCCDF616A3564F00427E6C /* Views */,
 				52FCCDF816A3568A00427E6C /* Controllers */,
+				52EED4C917A4D95D005FFC0F /* Models */,
 				52DB6CEE16990BD300585DF5 /* Supporting Files */,
 			);
 			path = RemindMeAgain;
@@ -323,6 +327,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		52EED4C917A4D95D005FFC0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52C76B67177AA6C200C2CFA1 /* Reminder.h */,
+				52EED4CA17A4DC74005FFC0F /* LoginStartupDelegate.h */,
+				52EED4CB17A4DC74005FFC0F /* LoginStartupDelegate.m */,
+				52C76B68177AA6C200C2CFA1 /* Reminder.m */,
+				52C76B6A177AAE8600C2CFA1 /* Reminders.h */,
+				52C76B6B177AAE8600C2CFA1 /* Reminders.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		52FCCDF616A3564F00427E6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,10 +366,6 @@
 				529D0FA216A2838300AD8301 /* MenubarController.m */,
 				529D0FA516A2838300AD8301 /* PanelController.h */,
 				529D0F9E16A2838300AD8301 /* PanelController.m */,
-				52C76B67177AA6C200C2CFA1 /* Reminder.h */,
-				52C76B68177AA6C200C2CFA1 /* Reminder.m */,
-				52C76B6A177AAE8600C2CFA1 /* Reminders.h */,
-				52C76B6B177AAE8600C2CFA1 /* Reminders.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -578,6 +591,7 @@
 				52D4C7FC16B5FCDD00FC2774 /* HourNumberField.m in Sources */,
 				52C76B69177AA6C200C2CFA1 /* Reminder.m in Sources */,
 				52C76B6C177AAE8600C2CFA1 /* Reminders.m in Sources */,
+				52EED4CC17A4DC74005FFC0F /* LoginStartupDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

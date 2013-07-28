@@ -2,16 +2,12 @@
 #import "BackgroundView.h"
 #import "StatusItemView.h"
 #import "MenubarController.h"
-#import <ServiceManagement/ServiceManagement.h>
-#import <ServiceManagement/SMLoginItem.h>
 
 #define OPEN_DURATION .15
 #define CLOSE_DURATION .1
 
 #define POPUP_HEIGHT 350
 #define MENU_ANIMATION_DURATION .1
-
-static NSString const *kLoginHelperBundleIdentifier = @"com.penguintastic.RemindMeAgainLoginHelperApp";
 
 #pragma mark -
 
@@ -29,6 +25,7 @@ static NSString const *kLoginHelperBundleIdentifier = @"com.penguintastic.Remind
     {
         _delegate = delegate;
         reminders = [Reminders new];
+        loginStartupDelegate = [LoginStartupDelegate new];
     }
     return self;
 }
@@ -236,7 +233,7 @@ static NSString const *kLoginHelperBundleIdentifier = @"com.penguintastic.Remind
     
     if ([tabViewItemId isEqualToString: @"preferences_tab"])
     {
-        if ([self isLoginStartupPreferenceEnabled]){
+        if ([loginStartupDelegate isEnabled]){
             [loginStartupPreferenceButton setState: NSOnState];
         } else {
             [loginStartupPreferenceButton setState: NSOffState];
@@ -440,53 +437,14 @@ static NSString const *kLoginHelperBundleIdentifier = @"com.penguintastic.Remind
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
-- (void)addLoginItem
-{
-    if (!SMLoginItemSetEnabled((__bridge CFStringRef)kLoginHelperBundleIdentifier, true)) {
-        NSLog(@"SMLoginItemSetEnabled(..., true) failed");
-    }
-}
-
-- (void)removeLoginItem
-{
-    if (!SMLoginItemSetEnabled((__bridge CFStringRef)kLoginHelperBundleIdentifier, false)) {
-        NSLog(@"SMLoginItemSetEnabled(..., false) failed");
-    }
-}
-
 - (void) handleLoginStartupPreference
 {
     
     if ([loginStartupPreferenceButton state] == NSOnState){
-        [self addLoginItem];
+        [loginStartupDelegate enable];
     } else {
-        [self removeLoginItem];
+        [loginStartupDelegate disable];
     }
-}
-
-- (BOOL)isLoginStartupPreferenceEnabled
-{
-    NSArray *jobs = (__bridge NSArray *)SMCopyAllJobDictionaries(kSMDomainUserLaunchd);
-    if (jobs == nil) {
-        return NO;
-    }
-    
-    if ([jobs count] == 0) {
-        CFRelease((__bridge CFArrayRef)jobs);
-        return NO;
-    }
-    
-    BOOL onDemand = NO;
-    for (NSDictionary *job in jobs) {
-        NSLog(@"job key %@", [job objectForKey:@"Label"]);
-        if ([kLoginHelperBundleIdentifier isEqualToString:[job objectForKey:@"Label"]]) {
-            onDemand = [[job objectForKey:@"OnDemand"] boolValue];
-            break;
-        }
-    }
-    
-    CFRelease((__bridge CFArrayRef)jobs);
-    return onDemand;
 }
 
 - (void) quitApplication {
