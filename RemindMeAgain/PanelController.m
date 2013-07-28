@@ -261,7 +261,11 @@
 {
     NSString *reminderText = [preferences stringForKey:[@"reminderText" stringByAppendingString:preferenceReminderId]];
     if ([reminderText length] == 0){
-        reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
+        if ([[self getReminderIdOfCurrentTab] isEqualToString: @"1"]){
+            reminderText = @"Get up. Take a Deep Breath. Stretch your legs.";
+        } else {
+            reminderText = @"Another reminder...";
+        }
     }
     return reminderText;
 }
@@ -276,7 +280,11 @@
     
     NSInteger reminderPeriodInMinutes = [prefs integerForKey:[@"reminderPeriod" stringByAppendingString:preferenceReminderId]];
     if (reminderPeriodInMinutes == 0){
-        reminderPeriodInMinutes = 30;
+        if ([reminderId isEqualToString:@"1"]){
+            reminderPeriodInMinutes = 30;
+        } else {
+            reminderPeriodInMinutes = 60;
+        }
     }
     [self setReminderPeriod:reminderPeriodInMinutes];
 }
