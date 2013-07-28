@@ -247,6 +247,14 @@
         [reminderTextField selectText:self];
         [[reminderTextField currentEditor] setSelectedRange:NSMakeRange([[reminderTextField stringValue] length], 0)];
     }
+    
+    for (Reminder *reminder in [reminders getAllReminders]){
+        if ([reminder isRunning]){
+            [self displayReminderIsRunning:[reminder reminderId]];
+        } else {
+            [self displayReminderNotRunning:[reminder reminderId]];
+        }
+    }
 }
 
 - (NSString *)getReminderTextByPreferenceReminderId:(NSString *)preferenceReminderId preferences:(NSUserDefaults *)preferences
@@ -271,15 +279,6 @@
         reminderPeriodInMinutes = 30;
     }
     [self setReminderPeriod:reminderPeriodInMinutes];
-    
-    for (Reminder *reminder in [reminders getAllReminders]){
-        if ([reminder isRunning]){
-            [self displayReminderIsRunning:[reminder reminderId]];
-        } else {
-            [self displayReminderNotRunning:[reminder reminderId]];
-        }
-    }
-    
 }
 
 - (NSUserDefaults *)loadPreferences
