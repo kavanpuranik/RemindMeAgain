@@ -42,8 +42,10 @@ static NSString const *kLoginHelperBundleIdentifier = @"com.penguintastic.Remind
     
     BOOL onDemand = NO;
     for (NSDictionary *job in jobs) {
-        NSLog(@"job key %@", [job objectForKey:@"Label"]);
+        //NSLog(@"job key %@", [job objectForKey:@"Label"]);
         if ([kLoginHelperBundleIdentifier isEqualToString:[job objectForKey:@"Label"]]) {
+
+            NSLog(@"found job key %@", [job objectForKey:@"Label"]);
             onDemand = [[job objectForKey:@"OnDemand"] boolValue];
             break;
         }
